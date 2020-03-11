@@ -2,16 +2,20 @@
 	"compileOnSave": true,
 	"compilerOptions": {
 		"alwaysStrict": true,
-		"lib": ["esnext"],
+		"lib": [
+			"esnext"
+		],
 		"module": "commonjs",
 		"noUnusedParameters": true,
 		"outDir": "./dist",
 		"sourceMap": true,
-		"types": ["node"],
-        "declaration": true,
-        "noUnusedLocals": true,
-        "removeComments": false,
-        "target": "esnext"
+		"types": [
+			"node"
+		],
+		"declaration": true,
+		"noUnusedLocals": true,
+		"removeComments": false,
+		"target": "ES2019"
 	},
 	"exclude": [
 		"node_modules",

@@ -1,0 +1,1 @@
+All rights to dirigeants, this is mainly a rewrite of dirigeants/klasa#sgn to TypeScript
