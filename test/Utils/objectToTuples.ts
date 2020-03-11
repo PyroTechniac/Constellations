@@ -8,7 +8,7 @@ ava('objectToTuples(basic)', (test): void => {
 });
 
 ava('objectToTuples(deep)', (test): void => {
-	const source = {a: 'Hello', b: 42069, deep: { i: []}};
+	const source = { a: 'Hello', b: 42069, deep: { i: [] } };
 	const expected = [['a', 'Hello'], ['b', 42069], ['deep.i', []]] as [string, unknown][];
 	test.deepEqual(objectToTuples(source), expected);
-})
+});

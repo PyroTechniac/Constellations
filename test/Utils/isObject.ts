@@ -4,7 +4,7 @@ import { isObject } from '../../dist';
 ava('isObject(string)', (test): void => {
 	const value = 'Hello World';
 	test.false(isObject(value));
-})
+});
 
 ava('isObject(number)', (test): void => {
 	const value = 420;

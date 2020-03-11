@@ -9,4 +9,4 @@ ava('sleep(cozy)', async (test): Promise<void> => {
 
 	const result = await pending;
 	test.is(result, undefined);
-})
+});
