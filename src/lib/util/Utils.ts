@@ -5,6 +5,13 @@ const REGEXPESC = /[-/\\^$*+?.()|[\]{}]/g;
 const PRIMITIVE_TYPES: string[] = ['string', 'boolean', 'bigint', 'number'];
 let sensitivePattern: RegExp | undefined;
 const zws = String.fromCharCode(8203);
+const TOTITLECASE = /[A-Za-zÀ-ÖØ-öø-ÿ]\S*/g;
+const titleCaseVariants: Record<string, string> = {
+	textchannel: 'TextChannel',
+	voicechannel: 'VoiceChannel',
+	categorychannel: 'CategoryChannel',
+	guildmember: 'GuildMember'
+};
 
 type KeyedObject = Record<PropertyKey, unknown>;
 
@@ -15,6 +22,11 @@ interface Thenable {
 
 interface Stringifiable {
 	toString(): string;
+}
+
+interface PromisifiedTimeout {
+	(ms: number): Promise<void>;
+	<T>(ms: number, value: T): Promise<T>;
 }
 
 interface PromisifiedExec {
@@ -79,7 +91,7 @@ export function initClean(token: string): void {
  * @param expression The expression to be wrapped in the codeblock
  */
 export function codeBlock(lang: string, expression: Stringifiable): string {
-	return `\`\`\`${lang}\n${expression || zws}\`\`\``
+	return `\`\`\`${lang}\n${expression || zws}\`\`\``;
 }
 
 /**
@@ -116,9 +128,7 @@ export function deepClone<T>(source: T): T {
  * @param command The command to run
  * @param options The options to pass to exec
  */
-const exec: PromisifiedExec = promisify(childProcessExec);
-
-export { exec }
+export const exec: PromisifiedExec = promisify(childProcessExec);
 
 /**
  * Verify if the input is a class constructor.
@@ -207,23 +217,53 @@ export function makeObject(path: string, value: unknown, obj: Record<string, unk
  * @param defaults Default properties
  * @param given Object to assign defaults to
  */
-export function mergeDefault<A extends KeyedObject, B extends Partial<A>>(defaults: A, given?: B): A & B {
+export function mergeDefault<A extends KeyedObject | object, B extends Partial<A>>(defaults: A, given?: B): A & B {
 	if (!given) return deepClone(defaults) as A & B;
 	for (const key in defaults) {
 		if (typeof given[key] === 'undefined') {
 			given[key] = deepClone(defaults[key]) as unknown as B[Extract<keyof A, string>];
 		} else if (isObject(given[key])) {
-			given[key] = mergeDefault(defaults[key] as KeyedObject, given[key] as KeyedObject) as unknown as B[Extract<keyof A, string>];
+			given[key] = mergeDefault(defaults[key] as unknown as KeyedObject, given[key] as unknown as KeyedObject) as unknown as B[Extract<keyof A, string>];
 		}
 	}
 
 	return given as A & B;
 }
 
-export function mergeObjects<A extends KeyedObject, B extends KeyedObject>(objTarget: A, objSource: B): A & B {
+/**
+ * Merges two objects.
+ * @param objTarget The object to be merged
+ * @param objSource The object to merge
+ */
+export function mergeObjects<A extends KeyedObject | object, B extends KeyedObject>(objTarget: A, objSource: B): A & B {
 	for (const [key, value] of Object.entries(objSource) as [keyof B, unknown][]) {
-		const targetValue = objTarget[key];
+		const targetValue = (objTarget as KeyedObject)[key];
+		if (isObject(value)) {
+			Reflect.set(objTarget, key, isObject(targetValue) ? mergeObjects(targetValue as KeyedObject, value as KeyedObject) : value);
+		} else if (!isObject(targetValue)) {
+			Reflect.set(objTarget, key, value);
+		}
 	}
+
+	return objTarget as A & B;
+}
+
+/**
+ * Convert an object to a tuple.
+ * @param original The object to convert
+ * @param prefix The prefix for the key
+ */
+export function objectToTuples(original: Record<string, unknown>, prefix = ''): [string, unknown][] {
+	const entries: [string, unknown][] = [];
+	for (const [key, value] of Object.entries(original)) {
+		if (isObject(value)) {
+			entries.push(...objectToTuples(value as Record<string, unknown>, `${prefix}${key}.`));
+		} else {
+			entries.push([`${prefix}${key}`, value]);
+		}
+	}
+
+	return entries;
 }
 
 /**
@@ -232,4 +272,31 @@ export function mergeObjects<A extends KeyedObject, B extends KeyedObject>(objTa
  */
 export function regExpEsc(str: string): string {
 	return str.replace(REGEXPESC, '\\$&');
+}
+
+/**
+ * Promisified version of setTimeout for use with await.
+ * @param delay The amount of time in ms to delay
+ * @param args Any args to pass to the .then (mostly pointless in this form)
+ */
+export const sleep: PromisifiedTimeout = promisify(setTimeout);
+
+/**
+ * Converts a string to Title Case.
+ * @param str The string to title case
+ */
+export function toTitleCase(str: string): string {
+	return str.replace(TOTITLECASE, (txt): string => titleCaseVariants[txt] || txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+}
+
+/**
+ * Try parse a stringified JSON string.
+ * @param value The value to parse
+ */
+export function tryParse(value: string): object | string {
+	try {
+		return JSON.parse(value);
+	} catch {
+		return value;
+	}
 }

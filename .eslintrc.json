@@ -1,3 +1,8 @@
 {
-	"extends": "klasa/eslint-ts"
+	"extends": "klasa/eslint-ts",
+	"rules": {
+		"@typescript-eslint/no-extra-parens": "off",
+		"no-extra-parens": "off",
+		"@typescript-eslint/no-non-null-assertion": "off"
+	}
 }
