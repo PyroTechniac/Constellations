@@ -24,7 +24,7 @@ export async function get(key: string): Promise<DataStructure | null> {
 export async function getThrows(key: string): Promise<DataStructure> {
 	await sleep(1);
 	const value = data.get(key);
-	if (typeof value === 'undefined') throw new Error(`Key ${key} does not exist.`);
+	if (typeof value === 'undefined') throw new Error(`Key '${key}' does not exist.`);
 	return value;
 }
 
@@ -44,7 +44,7 @@ export async function getAllNulls(keys: readonly string[]): Promise<(DataStructu
 	const values: DataStructure[] = [];
 	for (const key of keys) {
 		const value = data.get(key);
-		values.push(typeof value === 'undefined' ? null : value);
+		values.push(typeof value === 'undefined' ? null as unknown as DataStructure : value);
 	}
 	return values;
 }
