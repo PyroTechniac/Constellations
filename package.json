@@ -44,11 +44,14 @@
     ],
     "files": [
       "test/**/*.ts",
-	  "!test/**/lib"
+      "!test/**/lib"
     ],
     "require": [
       "ts-node/register",
       "source-map-support/register"
     ]
+  },
+  "dependencies": {
+    "@discordjs/collection": "^0.1.5"
   }
 }
