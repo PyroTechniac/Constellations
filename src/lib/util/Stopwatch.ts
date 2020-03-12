@@ -58,7 +58,7 @@ export class Stopwatch {
 	 */
 	public reset(): this {
 		this._start = performance.now();
-		this._end = null;
+		this._end = this._start;
 		return this;
 	}
 

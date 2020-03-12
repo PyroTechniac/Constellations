@@ -44,7 +44,7 @@
     ],
     "files": [
       "test/**/*.ts",
-      "!test/**/lib"
+	  "!test/**/lib"
     ],
     "require": [
       "ts-node/register",

@@ -17,6 +17,7 @@
       "**/*{.,-}{test,spec}.ts",
       "**/__tests__/**",
       "**/node_modules/**",
-      "examples/"
+	  "examples/",
+	  "docs/**"
     ]
   }
