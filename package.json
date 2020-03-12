@@ -12,7 +12,7 @@
     "coverage": "npx nyc --require ts-node/register --require source-map-support/register npm test",
     "coverage:report": "npx nyc report --reporter=html",
     "lint": "eslint --fix --ext ts src test",
-    "docs": "typedoc --excludeNotExported --out ./docs/ ./src/"
+    "docs": "typedoc --excludeNotExported --mode file --out ./docs/ ./src/"
   },
   "keywords": [],
   "author": "dirigeants",
