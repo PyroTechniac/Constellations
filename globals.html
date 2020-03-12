@@ -70,6 +70,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/requesthandler.html" class="tsd-kind-icon">Request<wbr>Handler</a></li>
 								<li class="tsd-kind-class"><a href="classes/stopwatch.html" class="tsd-kind-icon">Stopwatch</a></li>
+								<li class="tsd-kind-class"><a href="classes/timestamp.html" class="tsd-kind-icon">Timestamp</a></li>
 								<li class="tsd-kind-class"><a href="classes/type.html" class="tsd-kind-icon">Type</a></li>
 							</ul>
 						</section>
@@ -82,13 +83,19 @@
 								<li class="tsd-kind-interface"><a href="interfaces/promisifiedexec.html" class="tsd-kind-icon">Promisified<wbr>Exec</a></li>
 								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/promisifiedtimeout.html" class="tsd-kind-icon">Promisified<wbr>Timeout</a></li>
 								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/referredpromise.html" class="tsd-kind-icon">Referred<wbr>Promise</a></li>
+								<li class="tsd-kind-interface tsd-is-private"><a href="interfaces/timestamptemplateentry.html" class="tsd-kind-icon">Timestamp<wbr>Template<wbr>Entry</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias"><a href="globals.html#timeresolvable" class="tsd-kind-icon">Time<wbr>Resolvable</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable"><a href="globals.html#exec" class="tsd-kind-icon">exec</a></li>
-								<li class="tsd-kind-variable"><a href="globals.html#getpromisedetails" class="tsd-kind-icon">get<wbr>Promise<wbr>Details</a></li>
 								<li class="tsd-kind-variable"><a href="globals.html#sleep" class="tsd-kind-icon">sleep</a></li>
 							</ul>
 						</section>
@@ -100,8 +107,6 @@
 								<li class="tsd-kind-function"><a href="globals.html#clean" class="tsd-kind-icon">clean</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#codeblock" class="tsd-kind-icon">code<wbr>Block</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#deepclone" class="tsd-kind-icon">deep<wbr>Clone</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#hascatch" class="tsd-kind-icon">has<wbr>Catch</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#hasthen" class="tsd-kind-icon">has<wbr>Then</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#initclean" class="tsd-kind-icon">init<wbr>Clean</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#isclass" class="tsd-kind-icon">is<wbr>Class</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#isfunction" class="tsd-kind-icon">is<wbr>Function</a></li>
@@ -122,6 +127,24 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="timeresolvable" class="tsd-anchor"></a>
+					<h3>Time<wbr>Resolvable</h3>
+					<div class="tsd-signature tsd-kind-icon">Time<wbr>Resolvable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Timestamp.ts#L78">lib/util/Timestamp.ts:78</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Something that can be resolved into a form of time</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable">
 					<a name="exec" class="tsd-anchor"></a>
@@ -129,7 +152,7 @@
 					<div class="tsd-signature tsd-kind-icon">exec<span class="tsd-signature-symbol">:</span> <a href="interfaces/promisifiedexec.html" class="tsd-signature-type">PromisifiedExec</a><span class="tsd-signature-symbol"> = promisify(childProcessExec)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L139">lib/util/Utils.ts:139</a></li>
+							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L139">lib/util/Utils.ts:139</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -147,22 +170,12 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable">
-					<a name="getpromisedetails" class="tsd-anchor"></a>
-					<h3>get<wbr>Promise<wbr>Details</h3>
-					<div class="tsd-signature tsd-kind-icon">get<wbr>Promise<wbr>Details<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Type.ts#L2">lib/util/Type.ts:2</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable">
 					<a name="sleep" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> sleep</h3>
 					<div class="tsd-signature tsd-kind-icon">sleep<span class="tsd-signature-symbol">:</span> <a href="interfaces/promisifiedtimeout.html" class="tsd-signature-type">PromisifiedTimeout</a><span class="tsd-signature-symbol"> = promisify(setTimeout)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L290">lib/util/Utils.ts:290</a></li>
+							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L292">lib/util/Utils.ts:292</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -192,7 +205,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L53">lib/util/Utils.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L53">lib/util/Utils.ts:53</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -235,7 +248,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L69">lib/util/Utils.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L69">lib/util/Utils.ts:69</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -278,7 +291,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L83">lib/util/Utils.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L83">lib/util/Utils.ts:83</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -309,7 +322,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L101">lib/util/Utils.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L101">lib/util/Utils.ts:101</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -346,7 +359,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L109">lib/util/Utils.ts:109</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L109">lib/util/Utils.ts:109</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -374,62 +387,6 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="hascatch" class="tsd-anchor"></a>
-					<h3>has<wbr>Catch</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">has<wbr>Catch<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>catch<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L187">lib/util/Utils.ts:187</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>input: <span class="tsd-signature-symbol">{ </span>catch<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol"> }</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5><span class="tsd-flag ts-flagOptional">Optional</span> catch<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span></h5>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="hasthen" class="tsd-anchor"></a>
-					<h3>has<wbr>Then</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">has<wbr>Then<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>then<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L183">lib/util/Utils.ts:183</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>input: <span class="tsd-signature-symbol">{ </span>then<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol"> }</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5><span class="tsd-flag ts-flagOptional">Optional</span> then<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span></h5>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="initclean" class="tsd-anchor"></a>
 					<h3>init<wbr>Clean</h3>
 					<ul class="tsd-signatures tsd-kind-function">
@@ -439,7 +396,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L92">lib/util/Utils.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L92">lib/util/Utils.ts:92</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -470,7 +427,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L145">lib/util/Utils.ts:145</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L145">lib/util/Utils.ts:145</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -501,7 +458,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L155">lib/util/Utils.ts:155</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L155">lib/util/Utils.ts:155</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -532,7 +489,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L163">lib/util/Utils.ts:163</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L163">lib/util/Utils.ts:163</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -563,7 +520,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L171">lib/util/Utils.ts:171</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L171">lib/util/Utils.ts:171</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -594,7 +551,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L179">lib/util/Utils.ts:179</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L179">lib/util/Utils.ts:179</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -625,7 +582,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L195">lib/util/Utils.ts:195</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L197">lib/util/Utils.ts:197</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -656,7 +613,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L207">lib/util/Utils.ts:207</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L209">lib/util/Utils.ts:209</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -699,7 +656,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L228">lib/util/Utils.ts:228</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L230">lib/util/Utils.ts:230</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -745,7 +702,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L246">lib/util/Utils.ts:246</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L248">lib/util/Utils.ts:248</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -791,7 +748,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L264">lib/util/Utils.ts:264</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L266">lib/util/Utils.ts:266</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -828,7 +785,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L281">lib/util/Utils.ts:281</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L283">lib/util/Utils.ts:283</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -859,7 +816,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L296">lib/util/Utils.ts:296</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L298">lib/util/Utils.ts:298</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -890,7 +847,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/15146b1/src/lib/util/Utils.ts#L304">lib/util/Utils.ts:304</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9a35f8a/src/lib/util/Utils.ts#L306">lib/util/Utils.ts:306</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -930,6 +887,9 @@
 						<a href="classes/stopwatch.html" class="tsd-kind-icon">Stopwatch</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/timestamp.html" class="tsd-kind-icon">Timestamp</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/type.html" class="tsd-kind-icon">Type</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
@@ -950,11 +910,14 @@
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="interfaces/referredpromise.html" class="tsd-kind-icon">Referred<wbr>Promise</a>
 					</li>
-					<li class=" tsd-kind-variable">
-						<a href="globals.html#exec" class="tsd-kind-icon">exec</a>
+					<li class=" tsd-kind-interface tsd-is-private">
+						<a href="interfaces/timestamptemplateentry.html" class="tsd-kind-icon">Timestamp<wbr>Template<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#timeresolvable" class="tsd-kind-icon">Time<wbr>Resolvable</a>
 					</li>
 					<li class=" tsd-kind-variable">
-						<a href="globals.html#getpromisedetails" class="tsd-kind-icon">get<wbr>Promise<wbr>Details</a>
+						<a href="globals.html#exec" class="tsd-kind-icon">exec</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#sleep" class="tsd-kind-icon">sleep</a>
@@ -973,12 +936,6 @@
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#deepclone" class="tsd-kind-icon">deep<wbr>Clone</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#hascatch" class="tsd-kind-icon">has<wbr>Catch</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#hasthen" class="tsd-kind-icon">has<wbr>Then</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#initclean" class="tsd-kind-icon">init<wbr>Clean</a>
