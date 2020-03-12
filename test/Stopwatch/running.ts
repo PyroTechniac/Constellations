@@ -17,4 +17,4 @@ ava('stopwatch(running(method))', (test): void => {
 	const stopwatch = new Stopwatch().start();
 
 	test.true(stopwatch.running);
-})
+});

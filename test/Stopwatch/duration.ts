@@ -11,4 +11,4 @@ ava('stopwatch(duration(running))', async (test): Promise<void> => {
 	const second = stopwatch.duration;
 
 	test.true(first < second);
-})
+});
