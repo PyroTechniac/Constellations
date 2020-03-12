@@ -180,10 +180,12 @@ export function isPrimitive(input: unknown): input is (string | bigint | number 
 	return PRIMITIVE_TYPES.includes(typeof input);
 }
 
+/** @internal */
 function hasThen(input: { then?: Function }): boolean {
 	return Reflect.has(input, 'then') && isFunction(input.then);
 }
 
+/** @internal */
 function hasCatch(input: { catch?: Function }): boolean {
 	return Reflect.has(input, 'catch') && isFunction(input.catch);
 }

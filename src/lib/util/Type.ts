@@ -1,5 +1,5 @@
 /** @internal */
-const { getPromiseDetails } = process.binding('util');
+const getPromiseDetails = process.binding('util').getPromiseDetails; // eslint-disable-line prefer-destructuring
 /** @internal */
 declare global {
 	namespace NodeJS { // eslint-disable-line @typescript-eslint/no-namespace
