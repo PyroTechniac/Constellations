@@ -1,4 +1,4 @@
-import {performance} from 'perf_hooks';
+import { performance } from 'perf_hooks';
 
 /**
  * The stopwatch class, uses native node to get the most accurate timer.
@@ -49,5 +49,47 @@ export class Stopwatch {
 		this._start = performance.now();
 		this._end = null;
 		return this;
+	}
+
+	/**
+	 * Resets the stopwatch (Returns a running state).
+	 * @chainable
+	 */
+	public reset(): this {
+		this._start = performance.now();
+		this._end = null;
+		return this;
+	}
+
+	/**
+	 * Starts the Stopwatch.
+	 * @chainable
+	 */
+	public start(): this {
+		if (!this.running) {
+			this._start = performance.now() - this.duration;
+			this._end = null;
+		}
+
+		return this;
+	}
+
+	/**
+	 * Stops the stopwatch, freezing the duration.
+	 * @chainable
+	 */
+	public stop(): this {
+		if (this.running) this._end = performance.now();
+		return this;
+	}
+
+	/**
+	 * Defines toString behavior
+	 */
+	public toString(): string {
+		const time = this.duration;
+		if (time >= 1000) return `${(time / 1000).toFixed(this.digits)}s`;
+		if (time >= 1) return `${time.toFixed(this.digits)}ms`;
+		return `${(time * 1000).toFixed(this.digits)}μs`;
 	}
 }
