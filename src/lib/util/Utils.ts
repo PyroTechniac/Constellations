@@ -1,11 +1,16 @@
 import { promisify } from 'util';
 import { exec as childProcessExec, ExecOptions, PromiseWithChild } from 'child_process';
-
+/** @internal */
 const REGEXPESC = /[-/\\^$*+?.()|[\]{}]/g;
+/** @internal */
 const PRIMITIVE_TYPES: string[] = ['string', 'boolean', 'bigint', 'number'];
+/** @internal */
 let sensitivePattern: RegExp | undefined;
+/** @internal */
 const zws = String.fromCharCode(8203);
+/** @internal */
 const TOTITLECASE = /[A-Za-zÀ-ÖØ-öø-ÿ]\S*/g;
+/** @internal */
 const titleCaseVariants: Record<string, string> = {
 	textchannel: 'TextChannel',
 	voicechannel: 'VoiceChannel',
@@ -13,13 +18,16 @@ const titleCaseVariants: Record<string, string> = {
 	guildmember: 'GuildMember'
 };
 
+/** @internal */
 type KeyedObject = Record<PropertyKey, unknown>;
 
+/** @internal */
 interface Thenable {
 	then: Function;
 	catch: Function;
 }
 
+/** @internal */
 interface Stringifiable {
 	toString(): string;
 }

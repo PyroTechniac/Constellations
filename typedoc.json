@@ -4,5 +4,6 @@
 	],
 	"mode": "file",
 	"excludeNotExported": true,
-	"out": "./docs"
+	"out": "./docs",
+	"stripInternal": true
 }

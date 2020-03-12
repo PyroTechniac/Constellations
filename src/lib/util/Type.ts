@@ -1,6 +1,13 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
+/** @internal */
 const { getPromiseDetails } = process.binding('util');
+/** @internal */
+declare global {
+	namespace NodeJS {
+		interface Process {
+			binding(str: string): any;
+		}
+	}
+}
 
 /**
  * The class for deep checking types
