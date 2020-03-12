@@ -105,12 +105,12 @@ ava('request-handler(wait)', async (test): Promise<void> => {
 	rh.push('Hello').finally((): number => --counter);
 	await rh.wait();
 	test.deepEqual(counter, 0);
-})
+});
 
 ava('request-handler(wait(Empty))', async (test): Promise<void> => {
 	const rh = new RequestHandler(castedGet, castedGetAll);
 	await test.notThrowsAsync((): Promise<void> => rh.wait());
-})
+});
 
 ava('request-handler(wait(Throws))', async (test): Promise<void> => {
 	const rh = new RequestHandler(getThrows, getAllThrows);
@@ -119,7 +119,7 @@ ava('request-handler(wait(Throws))', async (test): Promise<void> => {
 	rh.push('Test3').catch(noop).finally((): number => --counter);
 	await rh.wait();
 	test.deepEqual(counter, 0);
-})
+});
 
 ava('request-handler(wait(Multiple))', async (test): Promise<void> => {
 	const rh = new RequestHandler(castedGet, castedGetAll);
@@ -129,7 +129,7 @@ ava('request-handler(wait(Multiple))', async (test): Promise<void> => {
 	rh.push('World').finally((): number => --counter);
 	await rh.wait();
 	test.deepEqual(counter, 0);
-})
+});
 
 ava('request-handler(wait(Multiple | Duplicated))', async (test): Promise<void> => {
 	const rh = new RequestHandler(castedGet, castedGetAll);
@@ -151,4 +151,4 @@ ava('request-handler(wait(Multiple | Throws))', async (test): Promise<void> => {
 	rh.push('World').finally((): number => --counter);
 	await rh.wait();
 	test.deepEqual(counter, 0);
-})
+});

@@ -1,8 +1,8 @@
 /** @internal */
-const { getPromiseDetails } = process.binding('util');
+const getPromiseDetails = process.binding('util').getPromiseDetails;
 /** @internal */
 declare global {
-	namespace NodeJS {
+	namespace NodeJS { // eslint-disable-line @typescript-eslint/no-namespace
 		interface Process {
 			binding(str: string): any;
 		}

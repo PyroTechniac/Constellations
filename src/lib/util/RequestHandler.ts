@@ -2,6 +2,7 @@
  * A class to handle multiple requests at once
  */
 export class RequestHandler<K, V extends IdKeyed<K>> {
+
 	/**
 	 * The function used to get values
 	 */
@@ -104,7 +105,7 @@ export class RequestHandler<K, V extends IdKeyed<K>> {
 			}
 		}
 
-		this.synchronizing = this.queue.size === 0 ? null : this.run()
+		this.synchronizing = this.queue.size === 0 ? null : this.run();
 	}
 
 	/**
@@ -120,10 +121,11 @@ export class RequestHandler<K, V extends IdKeyed<K>> {
 
 		return { promise, resolve: resolve!, reject: reject! };
 	}
+
 }
 
 export interface IdKeyed<K> {
-	id: K
+	id: K;
 }
 
 export interface GetFn<K, V> {

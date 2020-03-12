@@ -4,6 +4,7 @@ import { performance } from 'perf_hooks';
  * The stopwatch class, uses native node to get the most accurate timer.
  */
 export class Stopwatch {
+
 	/**
 	 * The number of digits to appear after the decimal point when returning the friendly duration
 	 */
@@ -92,4 +93,5 @@ export class Stopwatch {
 		if (time >= 1) return `${time.toFixed(this.digits)}ms`;
 		return `${(time * 1000).toFixed(this.digits)}μs`;
 	}
+
 }
