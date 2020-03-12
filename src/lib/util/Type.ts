@@ -108,7 +108,7 @@ export class Type {
 		else if (Array.isArray(this.value) || this.value instanceof Set) for (const value of this.value) this.addValue(value);
 		else if (this.is === 'Object') {
 			this.is = 'Record';
-			for (const entry of Object.entries(this.value)) this.addEntry(entry);
+			for (const entry of Object.entries(this.value as Record<PropertyKey, unknown>)) this.addEntry(entry);
 		}
 		Object.freeze(this);
 		/* eslint-enable curly */

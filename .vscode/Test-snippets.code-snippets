@@ -16,7 +16,10 @@
 	// 	"description": "Log output to console"
 	// }
 	"New Test": {
-		"prefix": ["test"],
+		"prefix": [
+			"unit",
+			"unit-test"
+		],
 		"description": "Creates a new test",
 		"body": [
 			"import ava from 'ava';",
