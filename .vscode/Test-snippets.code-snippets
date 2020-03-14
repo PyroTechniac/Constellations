@@ -24,6 +24,7 @@
 		"body": [
 			"import ava from 'ava';",
 			"import { $0 } from '../../dist';"
-		]
+		],
+		"scope": "typescript"
 	}
 }

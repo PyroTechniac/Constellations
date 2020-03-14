@@ -6,7 +6,7 @@
   "scripts": {
     "prepublishOnly": "yarn build",
     "build": "tsc",
-    "test": "ava --timeout=1m",
+    "test": "ava --timeout=1m --fail-fast",
     "test:lint": "eslint --ext ts src test",
     "test:coverage": "npx nyc check-coverage --lines 90 --functions 90 --branches 90",
     "coverage": "npx nyc --require ts-node/register --require source-map-support/register npm test",
@@ -28,6 +28,8 @@
     "ava": "^3.5.0",
     "eslint": "^6.8.0",
     "eslint-config-klasa": "dirigeants/klasa-lint",
+    "jest": "^25.1.0",
+    "jest-codemods": "^0.22.1",
     "nyc": "^15.0.0",
     "source-map-support": "^0.5.13",
     "ts-node": "^8.6.2",

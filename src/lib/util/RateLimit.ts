@@ -29,6 +29,8 @@ export class RateLimit {
 	public constructor(bucket: number, cooldown: number) {
 		this.bucket = bucket;
 		this.cooldown = cooldown;
+
+		this.reset();
 	}
 
 	/**
