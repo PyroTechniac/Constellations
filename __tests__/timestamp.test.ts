@@ -498,7 +498,7 @@ describe('display', (): void => {
 		expect(Timestamp.displayArbitrary('hh:mm:ss')).toBe(timestamp.display());
 	});
 
-	test('display-utc', (): void => {
+	test.skip('display-utc', (): void => {
 		const formatted = new Timestamp('LLLL').displayUTC(date);
 		expect(formatted).toBe('Saturday, March 09, 2019 9:20 PM');
 	});
