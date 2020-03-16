@@ -5,7 +5,7 @@ interface TokenResolver {
 	(time: Date): string;
 }
 
-/* eslint-disable max-len */
+/* eslint-disable max-len, no-inline-comments */
 /** @internal */
 const tokens = new Map<string, TokenResolver>([
 	// Dates
@@ -59,18 +59,18 @@ const tokens = new Map<string, TokenResolver>([
 	['lll', (time): string => `${TimestampUtils.MONTHS[time.getMonth()].slice(0, 3)} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],
 	['LLLL', (time): string => `${TimestampUtils.DAYS[time.getDay()]}, ${TimestampUtils.MONTHS[time.getMonth()]} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],
 	['llll', (time): string => `${TimestampUtils.DAYS[time.getDay()].slice(0, 3)} ${TimestampUtils.MONTHS[time.getMonth()].slice(0, 3)} ${String(time.getDate()).padStart(2, '0')}, ${String(time.getFullYear())} ${String(time.getHours() % 12 || 12)}:${String(time.getMinutes()).padStart(2, '0')} ${time.getHours() < 12 ? 'AM' : 'PM'}`],
-	['Z', (time): string => {
+	['Z', /* istanbul ignore next */ (time): string => {
 		const offset = time.getTimezoneOffset();
 		const unsigned = offset >= 0, absolute = Math.abs(offset);
 		return `${unsigned ? '+' : '-'}${String(Math.floor(absolute / 60)).padStart(2, '0')}:${String(absolute % 60).padStart(2, '0')}`;
 	}],
-	['ZZ', (time): string => {
+	['ZZ', /* istanbul ignore next */ (time): string => {
 		const offset = time.getTimezoneOffset();
 		const unsigned = offset >= 0, absolute = Math.abs(offset);
 		return `${unsigned ? '+' : '-'}${String(Math.floor(absolute / 60)).padStart(2, '0')}:${String(absolute % 60).padStart(2, '0')}`;
 	}]
 ]);
-/* eslint-enable max-len */
+/* eslint-enable max-len, no-inline-comments */
 
 /**
  * Something that can be resolved into a form of time
@@ -194,6 +194,7 @@ export class Timestamp {
 				template.push({ type: 'literal', content: current });
 			} else {
 				current += currentChar;
+				/* istanbul ignore next */
 				while (i + 1 < pattern.length && !TimestampUtils.TOKENS.has(pattern[i + 1]) && pattern[i + 1] !== '[') current += pattern[++i];
 				template.push({ type: 'literal', content: current });
 			}

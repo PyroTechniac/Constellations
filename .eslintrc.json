@@ -1,5 +1,8 @@
 {
 	"extends": "klasa/eslint-ts",
+	"env": {
+		"jest": true
+	},
 	"rules": {
 		"@typescript-eslint/no-extra-parens": "off",
 		"no-extra-parens": "off",

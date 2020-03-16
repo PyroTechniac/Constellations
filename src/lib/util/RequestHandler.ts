@@ -73,6 +73,7 @@ export class RequestHandler<K, V extends IdKeyed<K>> {
 		this.queue = new Map();
 
 		const keys = [...queue.keys()];
+		/* istanbul ignore else */
 		if (keys.length === 1) {
 			const [key] = keys;
 			try {
@@ -91,6 +92,7 @@ export class RequestHandler<K, V extends IdKeyed<K>> {
 					// Retrieve the entry by the value's id, then resolve and
 					// delete it from the queue to prevent resolving twice.
 					const entry = queue.get(value.id);
+					/* istanbul ignore next */
 					if (typeof entry === 'undefined') continue;
 					entry.resolve(value);
 					queue.delete(value.id);

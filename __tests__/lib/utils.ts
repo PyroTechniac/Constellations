@@ -1,4 +1,5 @@
 import { platform } from 'os';
 
-export const windows = platform() === 'win32';
+const windows = platform() === 'win32';
+/* istanbul ignore next */
 export const lineEndings = windows ? '\r\n' : '\n';

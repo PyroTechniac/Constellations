@@ -2,6 +2,7 @@
  * RateLimit class for handling dripping of requests.
  */
 export class RateLimit {
+
 	/**
 	 * The number of requests before this is limited
 	 */
@@ -92,4 +93,5 @@ export class RateLimit {
 		this.remaining = this.bucket;
 		return this;
 	}
+
 }

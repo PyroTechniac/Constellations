@@ -2,6 +2,7 @@ import Collection, { CollectionConstructor } from '@discordjs/collection';
 import { RateLimit } from './RateLimit';
 
 export class RateLimitManager<K = string> extends Collection<K, RateLimit> {
+
 	/**
 	 * The bucket of how many times each RateLimit can drip
 	 */
@@ -50,7 +51,7 @@ export class RateLimitManager<K = string> extends Collection<K, RateLimit> {
 
 	public set cooldown(value: number) {
 		for (const ratelimit of this.values()) ratelimit.cooldown = value;
-		this._cooldown = value
+		this._cooldown = value;
 	}
 
 	/**
@@ -101,4 +102,5 @@ export class RateLimitManager<K = string> extends Collection<K, RateLimit> {
 	public static get [Symbol.species](): CollectionConstructor {
 		return Collection as unknown as CollectionConstructor;
 	}
+
 }

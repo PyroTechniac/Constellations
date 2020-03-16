@@ -22,9 +22,31 @@
 		],
 		"description": "Creates a new test",
 		"body": [
-			"import ava from 'ava';",
-			"import { $0 } from '../../dist';"
+			"import { $0 } from '../src';"
 		],
 		"scope": "typescript"
+	},
+	"New Test Function": {
+		"prefix": [
+			"create-test-scope"
+		],
+		"description": "Creates a new test scope",
+		"body": [
+			"test('$0', (): void => {",
+			"\t",
+			"});"
+		],
+		"scope": "typescript"
+	},
+	"New Describe Function": {
+		"prefix": [
+			"create-describe-scope"
+		],
+		"description": "Creates a new describe scope",
+		"body": [
+			"describe('$0', (): void => {",
+			"\t",
+			"});"
+		]
 	}
 }

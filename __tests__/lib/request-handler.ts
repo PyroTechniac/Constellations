@@ -1,4 +1,4 @@
-import { sleep } from '../../../dist';
+import { sleep } from '../../src';
 
 export function allSettled<T>(promises: Promise<T>[]): Promise<(PromiseFulfilled<T> | PromiseRejected)[]> {
 	return Promise.all(promises.map((promise): Promise<PromiseFulfilled<T> | PromiseRejected> => promise
