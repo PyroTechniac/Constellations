@@ -233,12 +233,12 @@ describe('display', (): void => {
 
 	test('X', (): void => {
 		const formatted = new Timestamp('X').display(date);
-		expect(formatted).toBe('1552166435.001');
+		expect(formatted).toBe('1552148435.001');
 	});
 
 	test('x', (): void => {
 		const formatted = new Timestamp('x').display(date);
-		expect(formatted).toBe('1552166435001');
+		expect(formatted).toBe('1552148435001');
 	});
 
 	test('H', (): void => {

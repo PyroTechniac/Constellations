@@ -118,7 +118,6 @@ export class Timestamp {
 		return Timestamp._display(this._template, time);
 	}
 
-	/* istanbul ignore next */
 	/**
 	 * Display the current date utc with the current pattern.
 	 * @param time The time to display in utc
