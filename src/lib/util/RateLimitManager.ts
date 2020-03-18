@@ -3,6 +3,7 @@ import { RateLimit } from './RateLimit';
 
 /**
  * Manages {@link RateLimit}s.
+ * @typeParam K The key for the RateLimits
  */
 export class RateLimitManager<K = string> extends Collection<K, RateLimit> {
 
