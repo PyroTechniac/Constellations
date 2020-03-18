@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Timestamp | @pyrotechniac/constellations</title>
+	<title>Cron | @pyrotechniac/constellations</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="timestamp.html">Timestamp</a>
+					<a href="cron.html">Cron</a>
 				</li>
 			</ul>
-			<h1>Class Timestamp</h1>
+			<h1>Class Cron</h1>
 		</div>
 	</div>
 </header>
@@ -67,15 +67,20 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Timestamp class, useful for parsing and displaying dates and time.</p>
+						<p>Handles Cron strings and generates dates based on the cron string provided.</p>
 					</div>
+					<dl class="tsd-comment-tags">
+						<dt>see</dt>
+						<dd><p><a href="https://en.wikipedia.org/wiki/cron">https://en.wikipedia.org/wiki/cron</a></p>
+						</dd>
+					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Timestamp</span>
+						<span class="target">Cron</span>
 					</li>
 				</ul>
 			</section>
@@ -86,28 +91,31 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="timestamp.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="cron.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="timestamp.html#_template" class="tsd-kind-icon">_template</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="timestamp.html#pattern" class="tsd-kind-icon">pattern</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="cron.html#cron-1" class="tsd-kind-icon">cron</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="cron.html#days" class="tsd-kind-icon">days</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="cron.html#dows" class="tsd-kind-icon">dows</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="cron.html#hours" class="tsd-kind-icon">hours</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="cron.html#minutes" class="tsd-kind-icon">minutes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="cron.html#months" class="tsd-kind-icon">months</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="cron.html#normalized" class="tsd-kind-icon">normalized</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="timestamp.html#display" class="tsd-kind-icon">display</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="timestamp.html#displayutc" class="tsd-kind-icon">displayUTC</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="timestamp.html#edit" class="tsd-kind-icon">edit</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="timestamp.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="timestamp.html#_display" class="tsd-kind-icon">_display</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="timestamp.html#_parse" class="tsd-kind-icon">_parse</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="timestamp.html#_resolvedate" class="tsd-kind-icon">_resolve<wbr>Date</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="timestamp.html#displayarbitrary" class="tsd-kind-icon">display<wbr>Arbitrary</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="timestamp.html#utc" class="tsd-kind-icon">utc</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cron.html#next" class="tsd-kind-icon">next</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cron.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="cron.html#valueof" class="tsd-kind-icon">value<wbr>Of</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="cron.html#_normalize" class="tsd-kind-icon">_normalize</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="cron.html#_parsepart" class="tsd-kind-icon">_parse<wbr>Part</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="cron.html#_parsestring" class="tsd-kind-icon">_parse<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="cron.html#_range" class="tsd-kind-icon">_range</a></li>
 							</ul>
 						</section>
 					</div>
@@ -119,65 +127,137 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Timestamp<span class="tsd-signature-symbol">(</span>pattern<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="timestamp.html" class="tsd-signature-type">Timestamp</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Cron<span class="tsd-signature-symbol">(</span>cron<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="cron.html" class="tsd-signature-type">Cron</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Timestamp.ts#L102">src/lib/util/Timestamp.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L44">src/lib/util/Cron.ts:44</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Starts a new Timestamp and parses the pattern.</p>
-								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>pattern: <span class="tsd-signature-type">string</span></h5>
+									<h5>cron: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>The pattern to parse</p>
+											<p>The cron pattern to use</p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="timestamp.html" class="tsd-signature-type">Timestamp</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="cron.html" class="tsd-signature-type">Cron</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_template" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _template</h3>
-					<div class="tsd-signature tsd-kind-icon">_template<span class="tsd-signature-symbol">:</span> <a href="../interfaces/timestamptemplateentry.html" class="tsd-signature-type">TimestampTemplateEntry</a><span class="tsd-signature-symbol">[]</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="cron-1" class="tsd-anchor"></a>
+					<h3>cron</h3>
+					<div class="tsd-signature tsd-kind-icon">cron<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Timestamp.ts#L102">src/lib/util/Timestamp.ts:102</a></li>
+							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L14">src/lib/util/Cron.ts:14</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The raw template</p>
+							<p>The cron pattern</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="pattern" class="tsd-anchor"></a>
-					<h3>pattern</h3>
-					<div class="tsd-signature tsd-kind-icon">pattern<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="days" class="tsd-anchor"></a>
+					<h3>days</h3>
+					<div class="tsd-signature tsd-kind-icon">days<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Timestamp.ts#L97">src/lib/util/Timestamp.ts:97</a></li>
+							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L34">src/lib/util/Cron.ts:34</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The raw pattern</p>
+							<p>The days that this cron pattern includes</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="dows" class="tsd-anchor"></a>
+					<h3>dows</h3>
+					<div class="tsd-signature tsd-kind-icon">dows<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L44">src/lib/util/Cron.ts:44</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The days of the week that this cron pattern includes</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="hours" class="tsd-anchor"></a>
+					<h3>hours</h3>
+					<div class="tsd-signature tsd-kind-icon">hours<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L29">src/lib/util/Cron.ts:29</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The hours that this cron pattern includes</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="minutes" class="tsd-anchor"></a>
+					<h3>minutes</h3>
+					<div class="tsd-signature tsd-kind-icon">minutes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L24">src/lib/util/Cron.ts:24</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The minutes that this cron pattern includes</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="months" class="tsd-anchor"></a>
+					<h3>months</h3>
+					<div class="tsd-signature tsd-kind-icon">months<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L39">src/lib/util/Cron.ts:39</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The months that this cron pattern includes</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="normalized" class="tsd-anchor"></a>
+					<h3>normalized</h3>
+					<div class="tsd-signature tsd-kind-icon">normalized<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L19">src/lib/util/Cron.ts:19</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The normalized cron string</p>
 						</div>
 					</div>
 				</section>
@@ -185,99 +265,39 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="display" class="tsd-anchor"></a>
-					<h3>display</h3>
+					<a name="next" class="tsd-anchor"></a>
+					<h3>next</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../globals.html#timeresolvable" class="tsd-signature-type">TimeResolvable</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">next<span class="tsd-signature-symbol">(</span>outset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Date</span>, origin<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Timestamp.ts#L117">src/lib/util/Timestamp.ts:117</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L61">src/lib/util/Cron.ts:61</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Display the current date with the current pattern.</p>
+									<p>Get the next date that matches with the current pattern.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> time: <a href="../globals.html#timeresolvable" class="tsd-signature-type">TimeResolvable</a><span class="tsd-signature-symbol"> = new Date()</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> outset: <span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> = new Date()</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The time to display</p>
+										<p>The Date instance to compare with</p>
 									</div>
 								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="displayutc" class="tsd-anchor"></a>
-					<h3>displayUTC</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">displayUTC<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><a href="../globals.html#timeresolvable" class="tsd-signature-type">TimeResolvable</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Timestamp.ts#L126">src/lib/util/Timestamp.ts:126</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Display the current date utc with the current pattern.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
 								<li>
-									<h5>time: <a href="../globals.html#timeresolvable" class="tsd-signature-type">TimeResolvable</a></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> origin: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The time to display in utc</p>
+										<p>Whether this next call is origin</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="edit" class="tsd-anchor"></a>
-					<h3>edit</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">edit<span class="tsd-signature-symbol">(</span>pattern<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Timestamp.ts#L135">src/lib/util/Timestamp.ts:135</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Edits the current pattern.</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>chainable</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>pattern: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The new pattern for this instance</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -291,12 +311,34 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Timestamp.ts#L144">src/lib/util/Timestamp.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L84">src/lib/util/Cron.ts:84</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Defines the toString behavior of this Timestamp.</p>
+									<p>Defines toString behavior of the Cron instance.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="valueof" class="tsd-anchor"></a>
+					<h3>value<wbr>Of</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">value<wbr>Of<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L91">src/lib/util/Cron.ts:91</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Defines valueOf behavior of the Cron instance.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -304,35 +346,29 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-					<a name="_display" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> _display</h3>
+					<a name="_normalize" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> _normalize</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">_display<span class="tsd-signature-symbol">(</span>template<span class="tsd-signature-symbol">: </span><a href="../interfaces/timestamptemplateentry.html" class="tsd-signature-type">TimestampTemplateEntry</a><span class="tsd-signature-symbol">[]</span>, time<span class="tsd-signature-symbol">: </span><a href="../globals.html#timeresolvable" class="tsd-signature-type">TimeResolvable</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">_normalize<span class="tsd-signature-symbol">(</span>cron<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Timestamp.ts#L171">src/lib/util/Timestamp.ts:171</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L99">src/lib/util/Cron.ts:99</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Display the current date with the current pattern.</p>
+									<p>Normalize the pattern.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>template: <a href="../interfaces/timestamptemplateentry.html" class="tsd-signature-type">TimestampTemplateEntry</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>cron: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The pattern to parse</p>
-									</div>
-								</li>
-								<li>
-									<h5>time: <a href="../globals.html#timeresolvable" class="tsd-signature-type">TimeResolvable</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The time to display</p>
+										<p>The pattern to normalize</p>
 									</div>
 								</li>
 							</ul>
@@ -341,132 +377,113 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-					<a name="_parse" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> _parse</h3>
+					<a name="_parsepart" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> _parse<wbr>Part</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">_parse<span class="tsd-signature-symbol">(</span>pattern<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/timestamptemplateentry.html" class="tsd-signature-type">TimestampTemplateEntry</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">_parse<wbr>Part<span class="tsd-signature-symbol">(</span>cronPart<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Timestamp.ts#L182">src/lib/util/Timestamp.ts:182</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L137">src/lib/util/Cron.ts:137</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Parses the raw pattern.</p>
+									<p>Parses the current part.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>pattern: <span class="tsd-signature-type">string</span></h5>
+									<h5>cronPart: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The pattern to parse</p>
+										<p>The part of the pattern to parse</p>
+									</div>
+								</li>
+								<li>
+									<h5>id: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The id that identifies the current part</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/timestamptemplateentry.html" class="tsd-signature-type">TimestampTemplateEntry</a><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-					<a name="_resolvedate" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> _resolve<wbr>Date</h3>
+					<a name="_parsestring" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> _parse<wbr>String</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">_resolve<wbr>Date<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><a href="../globals.html#timeresolvable" class="tsd-signature-type">TimeResolvable</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span></li>
+						<li class="tsd-signature tsd-kind-icon">_parse<wbr>String<span class="tsd-signature-symbol">(</span>cron<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Timestamp.ts#L211">src/lib/util/Timestamp.ts:211</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L126">src/lib/util/Cron.ts:126</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Resolves a date.</p>
+									<p>Parses the pattern.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>time: <a href="../globals.html#timeresolvable" class="tsd-signature-type">TimeResolvable</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The time to parse</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="displayarbitrary" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> display<wbr>Arbitrary</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">display<wbr>Arbitrary<span class="tsd-signature-symbol">(</span>pattern<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, time<span class="tsd-signature-symbol">?: </span><a href="../globals.html#timeresolvable" class="tsd-signature-type">TimeResolvable</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Timestamp.ts#L153">src/lib/util/Timestamp.ts:153</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Display the current date with the current pattern.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>pattern: <span class="tsd-signature-type">string</span></h5>
+									<h5>cron: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The pattern to parse</p>
 									</div>
 								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> time: <a href="../globals.html#timeresolvable" class="tsd-signature-type">TimeResolvable</a><span class="tsd-signature-symbol"> = new Date()</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The time to display</p>
-									</div>
-								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="utc" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> utc</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">utc<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="../globals.html#timeresolvable" class="tsd-signature-type">TimeResolvable</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+					<a name="_range" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> _range</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">_range<span class="tsd-signature-symbol">(</span>min<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, step<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Timestamp.ts#L161">src/lib/util/Timestamp.ts:161</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Cron.ts#L161">src/lib/util/Cron.ts:161</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates a UTC Date object to work with.</p>
+									<p>Gets an array of numbers with the selected range.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> time: <a href="../globals.html#timeresolvable" class="tsd-signature-type">TimeResolvable</a><span class="tsd-signature-symbol"> = new Date()</span></h5>
+									<h5>min: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The date to convert to utc</p>
+										<p>The minimum value</p>
+									</div>
+								</li>
+								<li>
+									<h5>max: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The maximum value</p>
+									</div>
+								</li>
+								<li>
+									<h5>step: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The step value</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -482,9 +499,60 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
 						<a href="cron.html" class="tsd-kind-icon">Cron</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="cron.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="cron.html#cron-1" class="tsd-kind-icon">cron</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="cron.html#days" class="tsd-kind-icon">days</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="cron.html#dows" class="tsd-kind-icon">dows</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="cron.html#hours" class="tsd-kind-icon">hours</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="cron.html#minutes" class="tsd-kind-icon">minutes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="cron.html#months" class="tsd-kind-icon">months</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="cron.html#normalized" class="tsd-kind-icon">normalized</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cron.html#next" class="tsd-kind-icon">next</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cron.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="cron.html#valueof" class="tsd-kind-icon">value<wbr>Of</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+								<a href="cron.html#_normalize" class="tsd-kind-icon">_normalize</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+								<a href="cron.html#_parsepart" class="tsd-kind-icon">_parse<wbr>Part</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+								<a href="cron.html#_parsestring" class="tsd-kind-icon">_parse<wbr>String</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+								<a href="cron.html#_range" class="tsd-kind-icon">_range</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="duration.html" class="tsd-kind-icon">Duration</a>
 					</li>
@@ -500,51 +568,9 @@
 					<li class=" tsd-kind-class">
 						<a href="stopwatch.html" class="tsd-kind-icon">Stopwatch</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class">
+					<li class=" tsd-kind-class">
 						<a href="timestamp.html" class="tsd-kind-icon">Timestamp</a>
-						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="timestamp.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="timestamp.html#_template" class="tsd-kind-icon">_template</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="timestamp.html#pattern" class="tsd-kind-icon">pattern</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="timestamp.html#display" class="tsd-kind-icon">display</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="timestamp.html#displayutc" class="tsd-kind-icon">displayUTC</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="timestamp.html#edit" class="tsd-kind-icon">edit</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="timestamp.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-								<a href="timestamp.html#_display" class="tsd-kind-icon">_display</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-								<a href="timestamp.html#_parse" class="tsd-kind-icon">_parse</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
-								<a href="timestamp.html#_resolvedate" class="tsd-kind-icon">_resolve<wbr>Date</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="timestamp.html#displayarbitrary" class="tsd-kind-icon">display<wbr>Arbitrary</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="timestamp.html#utc" class="tsd-kind-icon">utc</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="type.html" class="tsd-kind-icon">Type</a>
 					</li>

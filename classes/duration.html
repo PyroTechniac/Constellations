@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RateLimit | @pyrotechniac/constellations</title>
+	<title>Duration | @pyrotechniac/constellations</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="ratelimit.html">RateLimit</a>
+					<a href="duration.html">Duration</a>
 				</li>
 			</ul>
-			<h1>Class RateLimit</h1>
+			<h1>Class Duration</h1>
 		</div>
 	</div>
 </header>
@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>RateLimit class for handling dripping of requests.</p>
+						<p>Converts duration strings into ms and future dates.</p>
 					</div>
 				</div>
 			</section>
@@ -75,7 +75,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">RateLimit</span>
+						<span class="target">Duration</span>
 					</li>
 				</ul>
 			</section>
@@ -86,33 +86,31 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="ratelimit.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="duration.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="ratelimit.html#bucket" class="tsd-kind-icon">bucket</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="ratelimit.html#cooldown" class="tsd-kind-icon">cooldown</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="ratelimit.html#remaining" class="tsd-kind-icon">remaining</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="ratelimit.html#time" class="tsd-kind-icon">time</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="duration.html#offset" class="tsd-kind-icon">offset</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="duration.html#aan" class="tsd-kind-icon">aan</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="duration.html#commas" class="tsd-kind-icon">commas</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="duration.html#regex" class="tsd-kind-icon">regex</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="ratelimit.html#expired" class="tsd-kind-icon">expired</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="ratelimit.html#limited" class="tsd-kind-icon">limited</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="ratelimit.html#remainingtime" class="tsd-kind-icon">remaining<wbr>Time</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="duration.html#fromnow" class="tsd-kind-icon">from<wbr>Now</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ratelimit.html#drip" class="tsd-kind-icon">drip</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ratelimit.html#reset" class="tsd-kind-icon">reset</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ratelimit.html#resetremaining" class="tsd-kind-icon">reset<wbr>Remaining</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ratelimit.html#resettime" class="tsd-kind-icon">reset<wbr>Time</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="duration.html#datefrom" class="tsd-kind-icon">date<wbr>From</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="duration.html#valueof" class="tsd-kind-icon">value<wbr>Of</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="duration.html#_parse" class="tsd-kind-icon">_parse</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="duration.html#tonow" class="tsd-kind-icon">to<wbr>Now</a></li>
 							</ul>
 						</section>
 					</div>
@@ -124,37 +122,32 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Rate<wbr>Limit<span class="tsd-signature-symbol">(</span>bucket<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, cooldown<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ratelimit.html" class="tsd-signature-type">RateLimit</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Duration<span class="tsd-signature-symbol">(</span>pattern<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="duration.html" class="tsd-signature-type">Duration</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/RateLimit.ts#L24">src/lib/util/RateLimit.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Duration.ts#L60">src/lib/util/Duration.ts:60</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a new Duration instance.</p>
+								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>bucket: <span class="tsd-signature-type">number</span></h5>
+									<h5>pattern: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>The number fo requests before this is limited</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<h5>cooldown: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The amount of milliseconds for this ratelimit to expire</p>
+											<p>The string to parse</p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="ratelimit.html" class="tsd-signature-type">RateLimit</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="duration.html" class="tsd-signature-type">Duration</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -162,62 +155,62 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="bucket" class="tsd-anchor"></a>
-					<h3>bucket</h3>
-					<div class="tsd-signature tsd-kind-icon">bucket<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="offset" class="tsd-anchor"></a>
+					<h3>offset</h3>
+					<div class="tsd-signature tsd-kind-icon">offset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/RateLimit.ts#L9">src/lib/util/RateLimit.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Duration.ts#L60">src/lib/util/Duration.ts:60</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The number of requests before this is limited</p>
+							<p>The offset</p>
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="cooldown" class="tsd-anchor"></a>
-					<h3>cooldown</h3>
-					<div class="tsd-signature tsd-kind-icon">cooldown<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
+					<a name="aan" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> aan</h3>
+					<div class="tsd-signature tsd-kind-icon">aan<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = /\ban?\b/ig</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/RateLimit.ts#L14">src/lib/util/RateLimit.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Duration.ts#L105">src/lib/util/Duration.ts:105</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The amount of milliseconds for the ratelimit to expire</p>
+							<p>The RegExp used for replacing a/an with 1</p>
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="remaining" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> remaining</h3>
-					<div class="tsd-signature tsd-kind-icon">remaining<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
+					<a name="commas" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> commas</h3>
+					<div class="tsd-signature tsd-kind-icon">commas<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = /,/g</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/RateLimit.ts#L19">src/lib/util/RateLimit.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Duration.ts#L100">src/lib/util/Duration.ts:100</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The remaining times this RateLimit can be dripped before the RateLimit bucket is empty</p>
+							<p>The RegExp used for removing commas</p>
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="time" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> time</h3>
-					<div class="tsd-signature tsd-kind-icon">time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
+					<a name="regex" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> regex</h3>
+					<div class="tsd-signature tsd-kind-icon">regex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = /(-?\d*\.?\d+(?:e[-+]?\d+)?)\s*([a-zμ]*)/ig</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/RateLimit.ts#L24">src/lib/util/RateLimit.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Duration.ts#L95">src/lib/util/Duration.ts:95</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>When this RateLimit is reset back to a full state</p>
+							<p>The RegExp used for pattern parsing</p>
 						</div>
 					</div>
 				</section>
@@ -225,68 +218,24 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="expired" class="tsd-anchor"></a>
-					<h3>expired</h3>
+					<a name="fromnow" class="tsd-anchor"></a>
+					<h3>from<wbr>Now</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> expired<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> fromNow<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/RateLimit.ts#L40">src/lib/util/RateLimit.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Duration.ts#L73">src/lib/util/Duration.ts:73</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Whether this RateLimit is expired or not, allowing the bucket to be reset</p>
+									<p>Get the date from now</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="limited" class="tsd-anchor"></a>
-					<h3>limited</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> limited<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/RateLimit.ts#L47">src/lib/util/RateLimit.ts:47</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Whether this RateLimit is limited or not</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="remainingtime" class="tsd-anchor"></a>
-					<h3>remaining<wbr>Time</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> remainingTime<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/RateLimit.ts#L54">src/lib/util/RateLimit.ts:54</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>The remaining time in milliseconds before this RateLimit instance is reset</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -294,106 +243,123 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="drip" class="tsd-anchor"></a>
-					<h3>drip</h3>
+					<a name="datefrom" class="tsd-anchor"></a>
+					<h3>date<wbr>From</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">drip<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">date<wbr>From<span class="tsd-signature-symbol">(</span>date<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/RateLimit.ts#L62">src/lib/util/RateLimit.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Duration.ts#L81">src/lib/util/Duration.ts:81</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Drips the RateLimit bucket.</p>
+									<p>Gets the date from a specified time.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>chainable</dt>
-									<dd></dd>
-								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>date: <span class="tsd-signature-type">Date</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The Date instance to get the date from</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="reset" class="tsd-anchor"></a>
-					<h3>reset</h3>
+					<a name="valueof" class="tsd-anchor"></a>
+					<h3>value<wbr>Of</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">reset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">value<wbr>Of<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/RateLimit.ts#L74">src/lib/util/RateLimit.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Duration.ts#L88">src/lib/util/Duration.ts:88</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Resets the RateLimit back to it&#39;s full state.</p>
+									<p>Defines the valueOf behavior of Duration.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>chainable</dt>
-									<dd></dd>
-								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="resetremaining" class="tsd-anchor"></a>
-					<h3>reset<wbr>Remaining</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">reset<wbr>Remaining<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+					<a name="_parse" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> _parse</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">_parse<span class="tsd-signature-symbol">(</span>pattern<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/RateLimit.ts#L92">src/lib/util/RateLimit.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Duration.ts#L145">src/lib/util/Duration.ts:145</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Resets the RateLimit&#39;s remaining uses back to full state.</p>
+									<p>Parse the pattern.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>chainable</dt>
-									<dd></dd>
-								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>pattern: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The pattern to parse</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="resettime" class="tsd-anchor"></a>
-					<h3>reset<wbr>Time</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">reset<wbr>Time<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="tonow" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> to<wbr>Now</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Now<span class="tsd-signature-symbol">(</span>earlier<span class="tsd-signature-symbol">: </span><a href="../globals.html#timeresolvable" class="tsd-signature-type">TimeResolvable</a><span class="tsd-signature-symbol"> | </span><a href="duration.html" class="tsd-signature-type">Duration</a>, showIn<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/RateLimit.ts#L82">src/lib/util/RateLimit.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/PyroTechniac/Constellations/blob/9ef8563/src/lib/util/Duration.ts#L112">src/lib/util/Duration.ts:112</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Resets the RateLimit&#39;s reset time back to full state.</p>
+									<p>Shows the user friendly duration of time between a period and now.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>chainable</dt>
-									<dd></dd>
-								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>earlier: <a href="../globals.html#timeresolvable" class="tsd-signature-type">TimeResolvable</a><span class="tsd-signature-symbol"> | </span><a href="duration.html" class="tsd-signature-type">Duration</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The time to compare</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> showIn: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Whether the output should be prefixed</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -412,54 +378,48 @@
 					<li class=" tsd-kind-class">
 						<a href="cron.html" class="tsd-kind-icon">Cron</a>
 					</li>
-					<li class=" tsd-kind-class">
-						<a href="duration.html" class="tsd-kind-icon">Duration</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="ratelimit.html" class="tsd-kind-icon">Rate<wbr>Limit</a>
+						<a href="duration.html" class="tsd-kind-icon">Duration</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="ratelimit.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="duration.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="ratelimit.html#bucket" class="tsd-kind-icon">bucket</a>
+								<a href="duration.html#offset" class="tsd-kind-icon">offset</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="ratelimit.html#cooldown" class="tsd-kind-icon">cooldown</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
+								<a href="duration.html#aan" class="tsd-kind-icon">aan</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="ratelimit.html#remaining" class="tsd-kind-icon">remaining</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
+								<a href="duration.html#commas" class="tsd-kind-icon">commas</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="ratelimit.html#time" class="tsd-kind-icon">time</a>
-							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="ratelimit.html#expired" class="tsd-kind-icon">expired</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-static">
+								<a href="duration.html#regex" class="tsd-kind-icon">regex</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="ratelimit.html#limited" class="tsd-kind-icon">limited</a>
-							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="ratelimit.html#remainingtime" class="tsd-kind-icon">remaining<wbr>Time</a>
+								<a href="duration.html#fromnow" class="tsd-kind-icon">from<wbr>Now</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="ratelimit.html#drip" class="tsd-kind-icon">drip</a>
+								<a href="duration.html#datefrom" class="tsd-kind-icon">date<wbr>From</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="ratelimit.html#reset" class="tsd-kind-icon">reset</a>
+								<a href="duration.html#valueof" class="tsd-kind-icon">value<wbr>Of</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="ratelimit.html#resetremaining" class="tsd-kind-icon">reset<wbr>Remaining</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+								<a href="duration.html#_parse" class="tsd-kind-icon">_parse</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="ratelimit.html#resettime" class="tsd-kind-icon">reset<wbr>Time</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="duration.html#tonow" class="tsd-kind-icon">to<wbr>Now</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class">
+						<a href="ratelimit.html" class="tsd-kind-icon">Rate<wbr>Limit</a>
+					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="ratelimitmanager.html" class="tsd-kind-icon">Rate<wbr>Limit<wbr>Manager</a>
 					</li>
