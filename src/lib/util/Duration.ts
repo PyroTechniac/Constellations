@@ -1,4 +1,4 @@
-import type { TimeResolvable } from './Timestamp'
+import type { TimeResolvable } from './Timestamp';
 
 /** @internal */
 const tokens = new Map([

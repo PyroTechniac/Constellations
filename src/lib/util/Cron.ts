@@ -8,6 +8,7 @@ const DAY = TimestampUtils.Time.Day;
  * @see https://en.wikipedia.org/wiki/cron
  */
 export class Cron {
+
 	/**
 	 * The cron pattern
 	 */
@@ -32,7 +33,7 @@ export class Cron {
 	 * The days that this cron pattern includes
 	 */
 	public days: number[];
-	
+
 	/**
 	 * The months that this cron pattern includes
 	 */
@@ -75,7 +76,7 @@ export class Cron {
 			}
 		}
 
-		return this.next(new Date(outset.getTime() + DAY), false)
+		return this.next(new Date(outset.getTime() + DAY), false);
 	}
 
 	/**
@@ -161,4 +162,5 @@ export class Cron {
 	private static _range(min: number, max: number, step: number): number[] {
 		return new Array(Math.floor((max - min) / step) + 1).fill(0).map((_val, i): number => min + (i * step));
 	}
+
 }

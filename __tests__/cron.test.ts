@@ -1,10 +1,10 @@
 import { Cron } from '../src';
 
-const minutes = new Array(60).fill(0).map((_, i): number => i);
-const hours = new Array(24).fill(0).map((_, i): number => i);
-const days = new Array(31).fill(0).map((_, i): number => i + 1);
-const months = new Array(12).fill(0).map((_, i): number => i + 1);
-const dows = new Array(7).fill(0).map((_, i): number => i);
+const minutes = new Array(60).fill(0).map((__, i): number => i);
+const hours = new Array(24).fill(0).map((__, i): number => i);
+const days = new Array(31).fill(0).map((__, i): number => i + 1);
+const months = new Array(12).fill(0).map((__, i): number => i + 1);
+const dows = new Array(7).fill(0).map((__, i): number => i);
 
 function odds(numbers: number[]): number[] {
 	return numbers.filter((num): boolean => Boolean(num % 2));

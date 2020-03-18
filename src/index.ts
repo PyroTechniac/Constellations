@@ -1,5 +1,6 @@
 import * as Constants from './lib/util/Constants';
-export { Constants }
+export { Constants };
+export * from './lib/util/Colors';
 export * from './lib/util/Cron';
 export * from './lib/util/Duration';
 export * from './lib/util/RateLimit';

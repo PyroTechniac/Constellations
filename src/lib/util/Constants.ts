@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-namespace */
+
 /** @internal */
 export namespace TimestampUtils { // eslint-disable-line @typescript-eslint/no-namespace
 	/** @internal */
