@@ -1,6 +1,9 @@
 import Collection, { CollectionConstructor } from '@discordjs/collection';
 import { RateLimit } from './RateLimit';
 
+/**
+ * Manages {@link RateLimit}s.
+ */
 export class RateLimitManager<K = string> extends Collection<K, RateLimit> {
 
 	/**
@@ -97,6 +100,18 @@ export class RateLimitManager<K = string> extends Collection<K, RateLimit> {
 		}
 
 		return amount;
+	}
+
+	/**
+	 * Clears the RateLimitManager, and clears the interval if one was set.
+	 */
+	public clear(): void {
+		if (this.sweepInterval) {
+			clearInterval(this.sweepInterval);
+			this.sweepInterval = null;
+		}
+
+		return super.clear();
 	}
 
 	public static get [Symbol.species](): CollectionConstructor {

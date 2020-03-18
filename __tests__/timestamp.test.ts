@@ -231,16 +231,6 @@ describe('display', (): void => {
 		expect(formatted).toBe('Saturday');
 	});
 
-	test('X', (): void => {
-		const formatted = new Timestamp('X').display(date);
-		expect(formatted).toBe('1552148435.001');
-	});
-
-	test('x', (): void => {
-		const formatted = new Timestamp('x').display(date);
-		expect(formatted).toBe('1552148435001');
-	});
-
 	test('H', (): void => {
 		const formatted = new Timestamp('H').display(date);
 		expect(formatted).toBe('16');

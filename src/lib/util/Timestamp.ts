@@ -32,8 +32,8 @@ const tokens = new Map<string, TokenResolver>([
 	['dd', (time): string => TimestampUtils.DAYS[time.getDay()].slice(0, 2)],
 	['ddd', (time): string => TimestampUtils.DAYS[time.getDay()].slice(0, 3)],
 	['dddd', (time): string => TimestampUtils.DAYS[time.getDay()]],
-	['X', (time): string => String(time.valueOf() / TimestampUtils.Time.Second)],
-	['x', (time): string => String(time.valueOf())],
+	['X', /* istanbul ignore next */ (time): string => String(time.valueOf() / TimestampUtils.Time.Second)],
+	['x', /* istanbul ignore next */ (time): string => String(time.valueOf())],
 
 	// Locales
 	['H', (time): string => String(time.getHours())],

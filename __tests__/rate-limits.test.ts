@@ -25,6 +25,21 @@ test('set-guard', (): void => {
 	expect(throwFn).toThrow(Error);
 });
 
+test('clears-timeout', (): void => {
+	const manager = new RateLimitManager(2, 30000);
+
+	manager.acquire('one');
+	expect(manager.size).toBe(1);
+
+	manager.clear();
+	expect(manager.size).toBe(0);
+	// eslint-disable-next-line dot-notation
+	expect(manager['sweepInterval']).toBeNull();
+
+	manager.clear();
+	expect(manager.size).toBe(0);
+});
+
 test('change-bucket', (): void => {
 	const manager = new RateLimitManager(2, 30000);
 	const ratelimit = manager.acquire('one');
