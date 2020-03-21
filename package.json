@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json.schemastore.org/package",
-	"name": "@pyrotechniac/constellations",
+	"name": "@pyrotechniac/constellation",
 	"version": "0.0.1",
 	"description": "The framework for the Starlight Discord bot",
 	"main": "dist/index.js",
@@ -30,6 +30,7 @@
 		"@typescript-eslint/eslint-plugin": "^2.23.0",
 		"@typescript-eslint/parser": "^2.23.0",
 		"ava": "^3.5.0",
+		"discord.js": "discordjs/discord.js",
 		"eslint": "^6.8.0",
 		"eslint-config-klasa": "dirigeants/klasa-lint",
 		"jest": "^25.1.0",
@@ -45,7 +46,8 @@
 		"url": "https://github.com/dirigeants/util"
 	},
 	"dependencies": {
-		"@discordjs/collection": "^0.1.5"
+		"@discordjs/collection": "^0.1.5",
+		"fs-nextra": "^0.4.7"
 	},
 	"jest": {
 		"preset": "ts-jest",

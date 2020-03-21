@@ -123,7 +123,7 @@ export class Timestamp {
 	 * Display the current date utc with the current pattern.
 	 * @param time The time to display in utc
 	 */
-	public displayUTC(time: TimeResolvable): string {
+	public displayUTC(time?: TimeResolvable): string {
 		return Timestamp._display(this._template, Timestamp.utc(time));
 	}
 

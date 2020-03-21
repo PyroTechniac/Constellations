@@ -1,4 +1,41 @@
+import type { ConsoleOptions, ConsoleColorStyles } from './ConstellationConsole';
+import { mergeDefault } from './Utils';
+
 /* eslint-disable @typescript-eslint/no-namespace */
+
+/** @internal */
+export namespace ConsoleUtils {
+	const colorBase = {
+		shard: { background: 'cyan', text: 'black' },
+		message: {},
+		time: {}
+	}
+
+	export const types: Record<keyof ConsoleColorStyles, keyof ConsoleColorStyles> = {
+		debug: 'log',
+		error: 'error',
+		log: 'log',
+		verbose: 'log',
+		warn: 'warn',
+		wtf: 'error',
+		info: 'info'
+	}
+
+	export const defaults: Omit<Required<ConsoleOptions>, 'useColor'> = {
+		stdout: process.stdout,
+		stderr: process.stderr,
+		timestamps: true,
+		utc: false,
+		colors: {
+			debug: mergeDefault(colorBase, { time: { background: 'magenta' } }),
+			error: mergeDefault(colorBase, { time: { background: 'red' } }),
+			log: mergeDefault(colorBase, { time: { background: 'blue' } }),
+			verbose: mergeDefault(colorBase, { time: { text: 'grey' } }),
+			warn: mergeDefault(colorBase, { time: { background: 'lightyellow', text: 'black' } }),
+			wtf: mergeDefault(colorBase, { message: { text: 'red' }, time: { background: 'red' } })
+		}
+	}
+}
 
 /** @internal */
 export namespace TimestampUtils { // eslint-disable-line @typescript-eslint/no-namespace
