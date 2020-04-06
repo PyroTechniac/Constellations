@@ -6,6 +6,7 @@
 	"rules": {
 		"@typescript-eslint/no-extra-parens": "off",
 		"no-extra-parens": "off",
-		"@typescript-eslint/no-non-null-assertion": "off"
+		"@typescript-eslint/no-non-null-assertion": "off",
+		"no-dupe-class-members": "off"
 	}
 }

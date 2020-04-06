@@ -17,7 +17,9 @@
 		"removeComments": false,
 		"target": "ES2019",
 		"strict": true,
-		"incremental": true
+		"incremental": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true
 	},
 	"exclude": [
 		"node_modules",

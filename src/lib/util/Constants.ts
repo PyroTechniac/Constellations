@@ -1,5 +1,8 @@
 import type { ConsoleOptions, ConsoleColorStyles } from './ConstellationConsole';
-import { mergeDefault } from './Utils';
+import type { MentionRegex } from './SharedTypes';
+import type { QueryBuilderDatatype, QueryBuilderEntryOptions } from './QueryBuilder';
+import { mergeDefault, isObject } from './Utils';
+import { ConstellationClientOptions } from '../Client';
 
 /* eslint-disable @typescript-eslint/no-namespace */
 
@@ -9,7 +12,7 @@ export namespace ConsoleUtils {
 		shard: { background: 'cyan', text: 'black' },
 		message: {},
 		time: {}
-	}
+	};
 
 	export const types: Record<keyof ConsoleColorStyles, keyof ConsoleColorStyles> = {
 		debug: 'log',
@@ -19,7 +22,7 @@ export namespace ConsoleUtils {
 		warn: 'warn',
 		wtf: 'error',
 		info: 'info'
-	}
+	};
 
 	export const defaults: Omit<Required<ConsoleOptions>, 'useColor'> = {
 		stdout: process.stdout,
@@ -34,7 +37,7 @@ export namespace ConsoleUtils {
 			warn: mergeDefault(colorBase, { time: { background: 'lightyellow', text: 'black' } }),
 			wtf: mergeDefault(colorBase, { message: { text: 'red' }, time: { background: 'red' } })
 		}
-	}
+	};
 }
 
 /** @internal */
@@ -111,4 +114,95 @@ export namespace CronUtils {
 	};
 
 	export const tokensRegex = new RegExp(Object.keys(tokens).join('|'), 'g');
+}
+
+/** @internal */
+export namespace GeneralUtils {
+	export const MENTION_REGEX: MentionRegex = {
+		userOrMember: /^(?:<@!?)?(\d{17,19})>?$/,
+		channel: /^(?:<#)?(\d{17,19})>?$/,
+		emoji: /^(?:<a?:\w{2,32}:)?(\d{17,19})>?$/,
+		role: /^(?:<@&)?(\d{17,19})>?$/,
+		snowflake: /^(\d{17,19})$/
+	};
+}
+
+/** @internal */
+export namespace QueryBuilderUtils {
+	export const DATATYPES: [string, QueryBuilderDatatype][] = [
+		['json', { type: 'JSON', serializer: (value): string => `'${JSON.stringify(value).replace(/'/g, "''")}'` }],
+		['any', { extends: 'json' }],
+		['boolean', { type: 'BOOLEAN', serializer: (value): string => `${value}` }],
+		['bool', { extends: 'boolean' }],
+		['snowflake', { type: 'VARCHAR(19)', serializer: (value): string => `'${value}'` }],
+		['channel', { extends: 'snowflake' }],
+		['textchannel', { extends: 'channel' }],
+		['voicechannel', { extends: 'channel' }],
+		['categorychannel', { extends: 'channel' }],
+		['guild', { extends: 'snowflake' }],
+		['number', { type: 'FLOAT', serializer: (value): string => `${value}` }],
+		['float', { extends: 'number' }],
+		['integer', { extends: 'number', type: 'INTEGER' }],
+		['command', { type: 'TEXT' }],
+		['language', { type: 'VARCHAR(5)' }],
+		['role', { extends: 'snowflake' }],
+		['string', { type: ({ maximum: max }): string => max ? `VARCHAR(${max})` : 'TEXT' }],
+		['url', { type: 'TEXT' }],
+		['user', { extends: 'snowflake' }]
+	];
+
+	export const OPTIONS: Required<QueryBuilderEntryOptions> = {
+		array: (): string => 'TEXT',
+		arraySerializer: (values): string => `'${JSON.stringify(values).replace(/'/g, "''")}'`,
+		formatDatatype: (name, datatype, def = null): string => `${name} ${datatype}${def !== null ? ` NOT NULL DEFAULT ${def}` : ''}`,
+		serializer: (value): string => `'${(isObject(value) ? JSON.stringify(value) : String(value)).replace(/'/g, "''")}'`
+	};
+}
+
+/** @internal */
+export namespace ClientUtils {
+	export const DEFAULT_OPTIONS: ConstellationClientOptions = {
+		commandEditing: false,
+		commandLogging: false,
+		commandMessageLifetime: 1800,
+		console: {},
+		consoleEvents: {
+			debug: false,
+			error: true,
+			log: true,
+			verbose: false,
+			warn: true,
+			wtf: true
+		},
+		createPiecesFolders: true,
+		disabledCorePieces: [],
+		language: 'en-US',
+		noPrefixDM: false,
+		prefix: '',
+		readyMessage: (client): string => `Successfully initialized. Ready to serve ${client.guilds.cache.size} guild${client.guilds.cache.size === 1 ? '' : 's'}.`,
+		typing: false,
+		owners: [],
+		production: process.env.NODE_ENV === 'production',
+		prefixCaseInsensitive: false,
+		providers: { default: 'json' },
+		pieceDefaults: {
+			languages: { enabled: true },
+			providers: {enabled: true},
+			serializers: {
+				enabled: true,
+				aliases: []
+			}
+		},
+		schedule: {interval: 60000},
+		slowmode: 0,
+		slowmodeAggressive: false,
+		settings: {
+			preserve: true,
+			gateways: {
+				guilds: {},
+				users: {},
+				clientStorage: {}
+			}
+		}
+	}
 }

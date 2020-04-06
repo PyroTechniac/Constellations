@@ -51,7 +51,7 @@ export class Colors {
 	 * @param options The options for this format
 	 */
 	public constructor(options: ColorsFormatOptions = {}) {
-		const {opening, closing} = Colors.text(options.text, Colors.background(options.background, Colors.style(options.style)));
+		const { opening, closing } = Colors.text(options.text, Colors.background(options.background, Colors.style(options.style)));
 
 		this.opening = Colors.useColors ? `\u001B[${opening.join(';')}m` : '';
 		this.closing = Colors.useColors ? `\u001B[${closing.join(';')}m` : '';
@@ -72,8 +72,8 @@ export class Colors {
 	 * @param styles The style or styles to apply
 	 * @param data The data
 	 */
-	private static style(styles?: string | string[], data: Partial<ColorsFormatData> = {}) {
-		const {opening = [], closing = []} = data;
+	private static style(styles?: string | string[], data: Partial<ColorsFormatData> = {}): ColorsFormatData {
+		const { opening = [], closing = [] } = data;
 		if (styles) {
 			if (!Array.isArray(styles)) styles = [styles];
 			for (let style of styles) {
@@ -84,7 +84,7 @@ export class Colors {
 			}
 		}
 
-		return {opening, closing};
+		return { opening, closing };
 	}
 
 	/**
@@ -92,7 +92,7 @@ export class Colors {
 	 * @param background The background to apply
 	 * @param data The data
 	 */
-	private static background(background?: string, data: Partial<ColorsFormatData> = {}) {
+	private static background(background?: string, data: Partial<ColorsFormatData> = {}): ColorsFormatData {
 		const { opening = [], closing = [] } = data;
 
 		if (background && background.toLowerCase() in this.BACKGROUNDS) {
@@ -117,6 +117,7 @@ export class Colors {
 
 		return { opening, closing };
 	}
+
 }
 
 export namespace Colors { // eslint-disable-line @typescript-eslint/no-namespace, no-redeclare

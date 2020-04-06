@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`schema add 1`] = `
+Object {
+  "test": Object {
+    "array": false,
+    "configurable": true,
+    "default": null,
+    "inclusive": false,
+    "maximum": null,
+    "minimum": null,
+    "resolve": true,
+    "type": "string",
+  },
+}
+`;
+
+exports[`schema add-edit-entry-to-entry 1`] = `
+Object {
+  "subkey": Object {
+    "array": false,
+    "configurable": true,
+    "default": "Hello",
+    "inclusive": false,
+    "maximum": null,
+    "minimum": null,
+    "resolve": true,
+    "type": "string",
+  },
+}
+`;
+
+exports[`schema add-edit-folder-to-folder 1`] = `
+Object {
+  "subkey": Object {
+    "another": Object {
+      "array": false,
+      "configurable": true,
+      "default": null,
+      "inclusive": false,
+      "maximum": null,
+      "minimum": null,
+      "resolve": true,
+      "type": "number",
+    },
+    "nested": Object {
+      "array": false,
+      "configurable": true,
+      "default": null,
+      "inclusive": false,
+      "maximum": null,
+      "minimum": null,
+      "resolve": true,
+      "type": "string",
+    },
+  },
+}
+`;
+
+exports[`schema folder-empty 1`] = `
+Object {
+  "test": Object {},
+}
+`;
+
+exports[`schema folder-filled 1`] = `
+Object {
+  "someFolder": Object {
+    "someKey": Object {
+      "array": false,
+      "configurable": true,
+      "default": null,
+      "inclusive": false,
+      "maximum": null,
+      "minimum": null,
+      "resolve": true,
+      "type": "textchannel",
+    },
+  },
+}
+`;
+
+exports[`schema get-folder-double-nested 1`] = `
+Object {
+  "subkey": Object {
+    "nested": Object {
+      "double": Object {
+        "array": false,
+        "configurable": true,
+        "default": null,
+        "inclusive": false,
+        "maximum": null,
+        "minimum": null,
+        "resolve": true,
+        "type": "string",
+      },
+    },
+  },
+}
+`;
+
+exports[`schema properties 1`] = `Object {}`;
+
+exports[`schema-entry edit 1`] = `
+Object {
+  "array": true,
+  "configurable": true,
+  "default": Array [
+    1,
+  ],
+  "inclusive": true,
+  "maximum": 200,
+  "minimum": 100,
+  "resolve": true,
+  "type": "guild",
+}
+`;
+
+exports[`schema-entry properties 1`] = `
+Object {
+  "array": false,
+  "configurable": true,
+  "default": null,
+  "inclusive": false,
+  "maximum": null,
+  "minimum": null,
+  "resolve": true,
+  "type": "textchannel",
+}
+`;
+
+exports[`schema-entry toJSON 1`] = `
+Object {
+  "array": true,
+  "configurable": false,
+  "default": Array [],
+  "inclusive": true,
+  "maximum": 1000,
+  "minimum": 100,
+  "resolve": true,
+  "type": "textchannel",
+}
+`;
+
+exports[`schema-folder child 1`] = `
+Object {
+  "someKey": Object {
+    "array": false,
+    "configurable": true,
+    "default": null,
+    "inclusive": false,
+    "maximum": null,
+    "minimum": null,
+    "resolve": true,
+    "type": "textchannel",
+  },
+}
+`;
+
+exports[`schema-folder properties 1`] = `Object {}`;
+
+exports[`settings clone 1`] = `
+Object {
+  "count": null,
+  "messages": Object {
+    "hello": null,
+  },
+}
+`;
+
+exports[`settings properties 1`] = `
+Object {
+  "count": null,
+  "messages": Object {
+    "hello": null,
+  },
+}
+`;

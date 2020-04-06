@@ -23,6 +23,7 @@ test('pre-defined-@hourly', (): void => {
 	expect(specimine.days).toStrictEqual(days);
 	expect(specimine.months).toStrictEqual(months);
 	expect(specimine.dows).toStrictEqual(dows);
+	expect(specimine).toMatchSnapshot();
 });
 
 test('pre-defined-@daily', (): void => {
@@ -34,6 +35,7 @@ test('pre-defined-@daily', (): void => {
 	expect(specimine.days).toStrictEqual(days);
 	expect(specimine.months).toStrictEqual(months);
 	expect(specimine.dows).toStrictEqual(dows);
+	expect(specimine).toMatchSnapshot();
 });
 
 test('pre-defined-@weekly', (): void => {
@@ -45,6 +47,7 @@ test('pre-defined-@weekly', (): void => {
 	expect(specimine.days).toStrictEqual(days);
 	expect(specimine.months).toStrictEqual(months);
 	expect(specimine.dows).toStrictEqual([0]);
+	expect(specimine).toMatchSnapshot();
 });
 
 test('pre-defined-@monthly', (): void => {
@@ -56,6 +59,7 @@ test('pre-defined-@monthly', (): void => {
 	expect(specimine.days).toStrictEqual([1]);
 	expect(specimine.months).toStrictEqual(months);
 	expect(specimine.dows).toStrictEqual(dows);
+	expect(specimine).toMatchSnapshot();
 });
 
 test('pre-defined-@yearly', (): void => {
@@ -67,6 +71,7 @@ test('pre-defined-@yearly', (): void => {
 	expect(specimine.days).toStrictEqual([1]);
 	expect(specimine.months).toStrictEqual([1]);
 	expect(specimine.dows).toStrictEqual(dows);
+	expect(specimine).toMatchSnapshot();
 });
 
 test('pre-defined-@annually', (): void => {
@@ -78,6 +83,7 @@ test('pre-defined-@annually', (): void => {
 	expect(specimine.days).toStrictEqual([1]);
 	expect(specimine.months).toStrictEqual([1]);
 	expect(specimine.dows).toStrictEqual(dows);
+	expect(specimine).toMatchSnapshot();
 });
 
 test('every-minute', (): void => {
@@ -89,6 +95,7 @@ test('every-minute', (): void => {
 	expect(specimine.days).toStrictEqual(days);
 	expect(specimine.months).toStrictEqual(months);
 	expect(specimine.dows).toStrictEqual(dows);
+	expect(specimine).toMatchSnapshot();
 });
 
 test('every-other-minute', (): void => {
@@ -100,6 +107,7 @@ test('every-other-minute', (): void => {
 	expect(specimine.days).toStrictEqual(days);
 	expect(specimine.months).toStrictEqual(months);
 	expect(specimine.dows).toStrictEqual(dows);
+	expect(specimine).toMatchSnapshot();
 });
 
 test('every-other-hour', (): void => {
@@ -111,6 +119,7 @@ test('every-other-hour', (): void => {
 	expect(specimine.days).toStrictEqual(days);
 	expect(specimine.months).toStrictEqual(months);
 	expect(specimine.dows).toStrictEqual(dows);
+	expect(specimine).toMatchSnapshot();
 });
 
 test('every-other-day', (): void => {
@@ -122,6 +131,7 @@ test('every-other-day', (): void => {
 	expect(specimine.days).toStrictEqual(odds(days));
 	expect(specimine.months).toStrictEqual(months);
 	expect(specimine.dows).toStrictEqual(dows);
+	expect(specimine).toMatchSnapshot();
 });
 
 test('every-other-month', (): void => {
@@ -133,6 +143,7 @@ test('every-other-month', (): void => {
 	expect(specimine.days).toStrictEqual(days);
 	expect(specimine.months).toStrictEqual(odds(months));
 	expect(specimine.dows).toStrictEqual(dows);
+	expect(specimine).toMatchSnapshot();
 });
 
 test('every-other-day-of-week', (): void => {
@@ -144,6 +155,7 @@ test('every-other-day-of-week', (): void => {
 	expect(specimine.days).toStrictEqual(days);
 	expect(specimine.months).toStrictEqual(months);
 	expect(specimine.dows).toStrictEqual(evens(dows));
+	expect(specimine).toMatchSnapshot();
 });
 
 test('every-monday-through-friday-at-midnight', (): void => {
@@ -155,6 +167,7 @@ test('every-monday-through-friday-at-midnight', (): void => {
 	expect(specimine.days).toStrictEqual(days);
 	expect(specimine.months).toStrictEqual(months);
 	expect(specimine.dows).toStrictEqual([1, 2, 3, 4, 5]);
+	expect(specimine).toMatchSnapshot();
 });
 
 test('every-friday-in-july-at-midnight', (): void => {
@@ -166,6 +179,7 @@ test('every-friday-in-july-at-midnight', (): void => {
 	expect(specimine.days).toStrictEqual(days);
 	expect(specimine.months).toStrictEqual([7]);
 	expect(specimine.dows).toStrictEqual([5]);
+	expect(specimine).toMatchSnapshot();
 });
 
 test('every-friday-in-july-and-august-at-midnight', (): void => {
@@ -177,6 +191,7 @@ test('every-friday-in-july-and-august-at-midnight', (): void => {
 	expect(specimine.days).toStrictEqual(days);
 	expect(specimine.months).toStrictEqual([7, 8]);
 	expect(specimine.dows).toStrictEqual([5]);
+	expect(specimine).toMatchSnapshot();
 });
 
 test('this-instant', (): void => {
@@ -200,10 +215,12 @@ test('valueOf-is-normalized', (): void => {
 	const specimine = new Cron('* * * * mon-fri');
 
 	expect(specimine.valueOf()).toBe('* * * * 1-5');
+	expect(specimine.valueOf()).toMatchSnapshot();
 });
 
 test('toString-is-cron', (): void => {
 	const specimine = new Cron('* * * * mon-fri');
 
 	expect(specimine.toString()).toBe('* * * * mon-fri');
+	expect(specimine.toString()).toMatchSnapshot();
 });

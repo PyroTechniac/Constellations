@@ -1,5 +1,5 @@
 import {
-	arrayStrictEquals,
+	arraysStrictEquals,
 	chunk,
 	initClean,
 	clean,
@@ -24,29 +24,29 @@ import {
 
 import { lineEndings } from './lib/utils';
 
-describe('arrayStrictEquals', (): void => {
+describe('arraysStrictEquals', (): void => {
 	test('reference', (): void => {
 		const array: undefined[] = [];
 
-		expect(arrayStrictEquals(array, array)).toBe(true);
+		expect(arraysStrictEquals(array, array)).toBe(true);
 	});
 
 	test('identical', (): void => {
-		expect(arrayStrictEquals([], [])).toBe(true);
+		expect(arraysStrictEquals([], [])).toBe(true);
 
-		expect(arrayStrictEquals([5, 2, 1], [5, 2, 1])).toBe(true);
+		expect(arraysStrictEquals([5, 2, 1], [5, 2, 1])).toBe(true);
 	});
 
 	test('different-order', (): void => {
-		expect(arrayStrictEquals([0, 1, 2], [2, 1, 0])).toBe(false);
+		expect(arraysStrictEquals([0, 1, 2], [2, 1, 0])).toBe(false);
 	});
 
 	test('different-length', (): void => {
-		expect(arrayStrictEquals([1], [])).toBe(false);
+		expect(arraysStrictEquals([1], [])).toBe(false);
 	});
 
 	test('different-values', (): void => {
-		expect(arrayStrictEquals([1, 2, 5], [1, 2, 4])).toBe(false);
+		expect(arraysStrictEquals([1, 2, 5], [1, 2, 4])).toBe(false);
 	});
 });
 

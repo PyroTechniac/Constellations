@@ -1,6 +1,8 @@
 import { RequestHandler, GetFn, GetAllFn } from '../src';
 import { get, getAll, getThrows, getAllThrows, allSettled, getAllNulls, DataStructure } from './lib/request-handler';
 
+jest.useFakeTimers();
+
 const castedGet = get as GetFn<string, DataStructure>;
 
 const castedGetAll = getAll as GetAllFn<string, DataStructure>;

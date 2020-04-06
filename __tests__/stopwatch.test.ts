@@ -1,5 +1,7 @@
 import { Stopwatch, sleep } from '../src';
 
+jest.useFakeTimers();
+
 describe('chainables', (): void => {
 	test('restart', async (): Promise<void> => {
 		expect.assertions(4);

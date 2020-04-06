@@ -8,9 +8,9 @@
 		"prepublishOnly": "yarn build",
 		"build": "tsc",
 		"test": "jest",
-		"test:lint": "eslint --ext ts src __tests__",
+		"test:lint": "eslint --ext ts src __tests__ __mocks__",
 		"test:ci": "jest --ci --no-stack-trace --verbose",
-		"lint": "eslint --fix --ext ts src __tests__",
+		"lint": "eslint --fix --ext ts src __tests__ __mocks__",
 		"docs": "typedoc"
 	},
 	"keywords": [],
@@ -26,7 +26,8 @@
 	"devDependencies": {
 		"@istanbuljs/nyc-config-typescript": "^1.0.1",
 		"@types/jest": "^25.1.4",
-		"@types/node": "^13.9.0",
+		"@types/node": "^12.12.31",
+		"@types/ws": "^7.2.3",
 		"@typescript-eslint/eslint-plugin": "^2.23.0",
 		"@typescript-eslint/parser": "^2.23.0",
 		"ava": "^3.5.0",

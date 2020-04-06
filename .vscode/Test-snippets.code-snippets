@@ -47,6 +47,7 @@
 			"describe('$0', (): void => {",
 			"\t",
 			"});"
-		]
+		],
+		"scope": "typescript"
 	}
 }

@@ -1,11 +1,13 @@
 import { Duration } from '../src';
 
 test('simple-duration', (): void => {
-	expect(new Duration('a second').offset).toBe(1000);
+	const duration = new Duration('a second');
+	expect(duration.offset).toBe(1000);
 });
 
 test('simple-not-duration', (): void => {
-	expect(new Duration('a horse').offset).toBe(0);
+	const duration = new Duration('a horse');
+	expect(duration.offset).toBe(0);
 });
 
 test('valueOf-is-offset', (): void => {

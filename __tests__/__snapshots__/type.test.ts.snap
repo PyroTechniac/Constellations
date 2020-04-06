@@ -1,0 +1,455 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`array circular 1`] = `
+Type {
+  "childKeys": Map {},
+  "childValues": Map {
+    "Array" => Type {
+      "childKeys": Map {},
+      "childValues": Map {
+        "Array" => Type {
+          "childKeys": Map {},
+          "childValues": Map {},
+          "is": "[Circular:Array]",
+          "parent": [Circular],
+          "value": Array [
+            Array [
+              [Circular],
+            ],
+          ],
+        },
+      },
+      "is": "Array",
+      "parent": [Circular],
+      "value": Array [
+        Array [
+          [Circular],
+        ],
+      ],
+    },
+  },
+  "is": "Array",
+  "parent": null,
+  "value": Array [
+    Array [
+      [Circular],
+    ],
+  ],
+}
+`;
+
+exports[`array different-type 1`] = `
+Type {
+  "childKeys": Map {},
+  "childValues": Map {
+    "boolean" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "boolean",
+      "parent": [Circular],
+      "value": true,
+    },
+    "string" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "string",
+      "parent": [Circular],
+      "value": "Test",
+    },
+    "number" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "number",
+      "parent": [Circular],
+      "value": 7,
+    },
+  },
+  "is": "Array",
+  "parent": null,
+  "value": Array [
+    true,
+    "Test",
+    7,
+  ],
+}
+`;
+
+exports[`array empty 1`] = `
+Type {
+  "childKeys": Map {},
+  "childValues": Map {},
+  "is": "Array",
+  "parent": null,
+  "value": Array [],
+}
+`;
+
+exports[`array same-type 1`] = `
+Type {
+  "childKeys": Map {},
+  "childValues": Map {
+    "number" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "number",
+      "parent": [Circular],
+      "value": 3,
+    },
+  },
+  "is": "Array",
+  "parent": null,
+  "value": Array [
+    1,
+    2,
+    3,
+  ],
+}
+`;
+
+exports[`function empty 1`] = `
+Type {
+  "childKeys": Map {},
+  "childValues": Map {},
+  "is": "Function(0-arity)",
+  "parent": null,
+  "value": [Function],
+}
+`;
+
+exports[`function two-args 1`] = `
+Type {
+  "childKeys": Map {},
+  "childValues": Map {},
+  "is": "Function(2-arity)",
+  "parent": null,
+  "value": [Function],
+}
+`;
+
+exports[`map different-type 1`] = `
+Type {
+  "childKeys": Map {
+    "string" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "string",
+      "parent": [Circular],
+      "value": "digit",
+    },
+  },
+  "childValues": Map {
+    "string" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "string",
+      "parent": [Circular],
+      "value": "abc",
+    },
+    "number" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "number",
+      "parent": [Circular],
+      "value": 123,
+    },
+  },
+  "is": "Map",
+  "parent": null,
+  "value": Map {
+    "text" => "abc",
+    "digit" => 123,
+  },
+}
+`;
+
+exports[`map empty 1`] = `
+Type {
+  "childKeys": Map {},
+  "childValues": Map {},
+  "is": "Map",
+  "parent": null,
+  "value": Map {},
+}
+`;
+
+exports[`map mixed-with-object 1`] = `
+Type {
+  "childKeys": Map {
+    "string" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "string",
+      "parent": [Circular],
+      "value": "object",
+    },
+  },
+  "childValues": Map {
+    "string" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "string",
+      "parent": [Circular],
+      "value": "abc",
+    },
+    "number" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "number",
+      "parent": [Circular],
+      "value": 1,
+    },
+    "Object" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "Record",
+      "parent": [Circular],
+      "value": Object {},
+    },
+  },
+  "is": "Map",
+  "parent": null,
+  "value": Map {
+    "text" => "abc",
+    "digit" => 1,
+    "object" => Object {},
+  },
+}
+`;
+
+exports[`map same-type 1`] = `
+Type {
+  "childKeys": Map {
+    "string" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "string",
+      "parent": [Circular],
+      "value": "three",
+    },
+  },
+  "childValues": Map {
+    "number" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "number",
+      "parent": [Circular],
+      "value": 3,
+    },
+  },
+  "is": "Map",
+  "parent": null,
+  "value": Map {
+    "one" => 1,
+    "two" => 2,
+    "three" => 3,
+  },
+}
+`;
+
+exports[`object custom 1`] = `
+Type {
+  "childKeys": Map {},
+  "childValues": Map {},
+  "is": "Foo",
+  "parent": null,
+  "value": Foo {},
+}
+`;
+
+exports[`object generic 1`] = `
+Type {
+  "childKeys": Map {},
+  "childValues": Map {},
+  "is": "Record",
+  "parent": null,
+  "value": Object {},
+}
+`;
+
+exports[`object null 1`] = `
+Type {
+  "childKeys": Map {},
+  "childValues": Map {},
+  "is": "null",
+  "parent": null,
+  "value": null,
+}
+`;
+
+exports[`object recursive 1`] = `
+Type {
+  "childKeys": Map {
+    "string" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "string",
+      "parent": [Circular],
+      "value": "hello",
+    },
+  },
+  "childValues": Map {
+    "string" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "string",
+      "parent": [Circular],
+      "value": "bar",
+    },
+    "Object" => Type {
+      "childKeys": Map {
+        "string" => Type {
+          "childKeys": Map {},
+          "childValues": Map {},
+          "is": "string",
+          "parent": [Circular],
+          "value": "baz",
+        },
+      },
+      "childValues": Map {
+        "string" => Type {
+          "childKeys": Map {},
+          "childValues": Map {},
+          "is": "string",
+          "parent": [Circular],
+          "value": "world",
+        },
+      },
+      "is": "Record",
+      "parent": [Circular],
+      "value": Object {
+        "baz": "world",
+      },
+    },
+  },
+  "is": "Record",
+  "parent": null,
+  "value": Object {
+    "foo": "bar",
+    "hello": Object {
+      "baz": "world",
+    },
+  },
+}
+`;
+
+exports[`object types 1`] = `
+Type {
+  "childKeys": Map {
+    "string" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "string",
+      "parent": [Circular],
+      "value": "hello",
+    },
+  },
+  "childValues": Map {
+    "string" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "string",
+      "parent": [Circular],
+      "value": "bar",
+    },
+    "number" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "number",
+      "parent": [Circular],
+      "value": 2,
+    },
+    "boolean" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "boolean",
+      "parent": [Circular],
+      "value": true,
+    },
+  },
+  "is": "Record",
+  "parent": null,
+  "value": Object {
+    "baz": 2,
+    "foo": "bar",
+    "hello": true,
+  },
+}
+`;
+
+exports[`promise resolves 1`] = `
+Type {
+  "childKeys": Map {},
+  "childValues": Map {
+    "void" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "void",
+      "parent": [Circular],
+      "value": undefined,
+    },
+  },
+  "is": "Promise",
+  "parent": null,
+  "value": Promise {},
+}
+`;
+
+exports[`set different-types 1`] = `
+Type {
+  "childKeys": Map {},
+  "childValues": Map {
+    "string" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "string",
+      "parent": [Circular],
+      "value": "abc",
+    },
+    "number" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "number",
+      "parent": [Circular],
+      "value": 123,
+    },
+  },
+  "is": "Set",
+  "parent": null,
+  "value": Set {
+    "abc",
+    123,
+  },
+}
+`;
+
+exports[`set empty 1`] = `
+Type {
+  "childKeys": Map {},
+  "childValues": Map {},
+  "is": "Set",
+  "parent": null,
+  "value": Set {},
+}
+`;
+
+exports[`set same-type 1`] = `
+Type {
+  "childKeys": Map {},
+  "childValues": Map {
+    "number" => Type {
+      "childKeys": Map {},
+      "childValues": Map {},
+      "is": "number",
+      "parent": [Circular],
+      "value": 3,
+    },
+  },
+  "is": "Set",
+  "parent": null,
+  "value": Set {
+    1,
+    2,
+    3,
+  },
+}
+`;

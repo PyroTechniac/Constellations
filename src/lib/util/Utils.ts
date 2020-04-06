@@ -50,7 +50,7 @@ interface PromisifiedExec {
  * @param arr1 The first array to compare
  * @param arr2 The second array to compare
  */
-export function arrayStrictEquals<T extends readonly unknown[]>(arr1: T, arr2: T): boolean {
+export function arraysStrictEquals<T extends readonly unknown[]>(arr1: T, arr2: T): boolean {
 	if (arr1 === arr2) return true;
 	if (arr1.length !== arr2.length) return false;
 

@@ -1,7 +1,7 @@
 import { Console } from 'console';
 import { inspect } from 'util';
 import { Timestamp } from './Timestamp';
-import { ConsoleUtils } from './Constants'
+import { ConsoleUtils } from './Constants';
 import { Colors } from './Colors';
 import { mergeDefault } from './Utils';
 import type { DeepRequired } from './SharedTypes';
@@ -17,6 +17,15 @@ export interface ConsoleTimeObject {
 	background?: keyof typeof Colors.BACKGROUNDS | null;
 	style?: keyof typeof Colors.STYLES | null;
 	text?: keyof typeof Colors.TEXTS | null;
+}
+
+export interface ConsoleEvents {
+	debug?: boolean;
+	error?: boolean;
+	log?: boolean;
+	verbose?: boolean;
+	warn?: boolean;
+	wtf?: boolean;
 }
 
 export interface ConsoleColorObjects {
@@ -192,4 +201,5 @@ export class ConstellationConsole extends Console {
 			default: return String(data);
 		}
 	}
+
 }
